@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class test implements Servlet{
+public class test extends HttpServlet{
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         
