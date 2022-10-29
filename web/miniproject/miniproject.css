@@ -1,0 +1,200 @@
+/*css reset*/
+body{
+    background:#ccc;
+    font:12px/1.5 tahoma,arial,Microsoft YaHei,sans-serif;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.w{
+    width:1080px;
+    height:500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #215496;
+    padding: 50px 0px;
+    align-items: center;
+    /*50px和0之间没有逗号，不然不显示*/
+    
+}
+.w .user-content{
+/*这里用的是后代选择器，父选择器和子选择器之间要有一个空格！
+而不是和java一样以.连接*/
+    margin: 50px auto;
+    position: relative;
+    background: #fff;
+    width: 400px;
+    
+
+}
+.w .user-content .user-title{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px solid #999;
+}
+.w .user-content .user-form{
+    padding: 20px;
+}
+.w .user-content .user-form .user-form-error{
+    position: relative;
+    padding: 4px 0 4px 40px;
+    color: red;
+    border: 1px solid red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.w .user-content .user-form .user-form-error .error-icon{
+    position: absolute;
+    left: 14px;
+    top:50%;
+    margin-top: -7px;
+}
+.w .user-content .user-form .user-form-item{
+    position: relative;
+    margin-top: 20px;
+}
+.w .user-content .user-form .user-form-item .user-form-label{
+    position: absolute;
+    left:1px;
+    top:1px;
+    bottom:1px;
+    width:40px;
+    line-height: 36px;
+    background: #f3f3f3;
+    color: #d3d3d3;
+    text-align: center;
+    border-right:1px solid #bdbdbd ;
+
+
+}
+.w .user-content .user-form .user-form-item .user-form-input{
+    padding: 10px 0 10px 50px;
+    width: 300px;
+    height: 18px;
+    line-height:18px;
+    font-size: 15px;
+    border: 1px solid #bdbdbd;
+    outline:none;
+}
+.w .user-content .user-form .user-form-item .user-form-submit{
+    width: 100%;
+    font-size: 20px;
+    padding: 2px,0;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    background: #215496;
+    color: #fff;
+    cursor:pointer
+}
+.w .user-content .user-form .user-form-link{
+    text-align: right;
+    /*margin-right: 5px;*/
+    padding: 10px auto;
+}
+.w .user-content .user-form .user-form-link .link{
+    color:#999;
+    cursor: pointer;
+    font-size: 13px;
+   
+}
+.w .user-content .user-form .user-form-link .link:hover{
+    color: #547ca0;
+}
+.w .list_content{
+    position: relative;
+    margin: 0px auto;
+    width: 750px;
+    background: #fff;
+}
+.w .list_content .list-title{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #999;
+
+}
+.w .list_content .list-table-content{
+    padding: 5px 20px 80px 20px;
+}
+.w .list_content .list-table-content .list-error{
+    padding: 10px 10px 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: blueviolet;
+    font-size: 14px;
+
+}
+.w .list_content .list-table-content .list-error .error-icon{
+    margin-right: 5px;
+    font-size: 16px;
+}
+table{
+    margin: 5px auto;
+    border-spacing: 0px;
+}
+th,td{
+    padding: 5px 15px 5px 15px;
+    border-spacing: 0px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    background-color: #e0e9f0;
+    border-top: 1px solid #f1f8fe;
+    border-bottom: 1px solid #cbd2d8;
+    border-right: 1px solid #cbd2d8 ;
+}
+tr.head,th{
+    color: #fff;
+    background-color: #90b4d6;
+    border-top: 1px solid #90b4d6;
+    border-bottom: 2px solid #547ca0;
+    border-right: 1px solid #749abe ;
+    border-
+
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: -1px -1px 1px #666666;
+}
+td{
+    color: #547ca0;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+td.last .link{
+    text-decoration: none;
+    cursor: pointer;
+    background: #547ca0;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px 4px 8px;
+    text-shadow: none;
+    border-radius: 10px;
+}
+.w .list_content .list-table-content .list-link .link{
+    text-decoration: none;
+    cursor: pointer;
+    background: #547ca0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 20px;
+    text-shadow: none;
+    border-radius: 4px;
+    position: absolute;
+    left: 320px;
+    top:78%;
+    
+}
+
