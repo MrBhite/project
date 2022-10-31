@@ -35,7 +35,7 @@
         <!--引入SQL映射文件,相对于类的类路径-->
         <mapper resource="CSUSoftWare21/web/projectJPetStore/persistence/AccountMapper.xml"/>
         <mapper resource="CSUSoftWare21/web/projectJPetStore/persistence/ItemMapper.xml"/>
-
+        <mapper resource="CSUSoftWare21/web/projectJPetStore/persistence/SequenceMapper.xml"/>
         <mapper resource="CSUSoftWare21/web/projectJPetStore/persistence/CategoryMapper.xml"/>
     </mappers>
 

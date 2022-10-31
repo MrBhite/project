@@ -20,6 +20,29 @@ public class Account {
     private boolean bannerOption;
     private String bannerName;
 
+    public Account(String username, String password, String email, String firstName, String lastName, String status, String address1, String address2, String city, String state, String zip, String country, String phone, String favouriteCategoryId, String languagePreference, boolean listOption, boolean bannerOption, String bannerName) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.status = status;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
+        this.phone = phone;
+        this.favouriteCategoryId = favouriteCategoryId;
+        this.languagePreference = languagePreference;
+        this.listOption = listOption;
+        this.bannerOption = bannerOption;
+        this.bannerName = bannerName;
+    }
+
+    public Account(){;}
+
     public String getUsername() {
         return username;
     }

@@ -3,6 +3,7 @@ package CSUSoftWare21.web.projectJPetStore.persistence;
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.domain.Category;
 import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Sequence;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -35,6 +36,7 @@ public class MybatisDemo {
         AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
         CategoryMapper categoryMapper=sqlSession.getMapper(CategoryMapper.class);
         ItemMapper itemMapper=sqlSession.getMapper(ItemMapper.class);
+        SequenceMapper sequenceMapper=sqlSession.getMapper(SequenceMapper.class);
         //要执行的sql语句封装成方法，方法名是id（xml文件中）
         //List<Account> accounts=accountMapper.selectAll();
         /*Account account = accountMapper.getAccountByUsername("ACID");
@@ -43,9 +45,12 @@ public class MybatisDemo {
         //System.out.println(cats);
         //List<Item> items = itemMapper.selectAllItem();
         //System.out.println(items);
-        Item item = itemMapper.getItem("EST-10");
-        System.out.println(item);
-
+        //Item item = itemMapper.getItem("EST-10");
+        //System.out.println(item);
+        Sequence sequence=new Sequence();
+        sequence.setName("s");
+        Sequence sequence1 = sequenceMapper.getSequence(sequence);
+        System.out.println(sequence1);
 
         sqlSession.close();
     }

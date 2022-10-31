@@ -5,6 +5,15 @@ public class Category {
     private String name;
     private String description;
 
+    public Category(String categoryId, String name, String description) {
+        this.categoryId = categoryId;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Category() {
+    }
+
     public String getCategoryId() {
         return categoryId;
     }
