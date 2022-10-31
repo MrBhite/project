@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="test">
+<mapper namespace="CSUSoftWare21.web.projectJPetStore.persistence.AccountMapper">
     <select id="selectAll" resultType="CSUSoftWare21.web.projectJPetStore.domain.Account">
         select * from account;
     </select>
