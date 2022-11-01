@@ -34,14 +34,14 @@ public class MybatisDemo {
 */
         /*mapper代理开发*/
         //获取accountmapper接口的代理对象
-        AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
+        /*AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
         CategoryMapper categoryMapper=sqlSession.getMapper(CategoryMapper.class);
         ItemMapper itemMapper=sqlSession.getMapper(ItemMapper.class);
         SequenceMapper sequenceMapper=sqlSession.getMapper(SequenceMapper.class);
         //要执行的sql语句封装成方法，方法名是id（xml文件中）
         //List<Account> accounts=accountMapper.selectAll();
-        /*Account account = accountMapper.getAccountByUsername("ACID");
-        System.out.println(account);*/
+        *//*Account account = accountMapper.getAccountByUsername("ACID");
+        System.out.println(account);*//*
         //Category cats = CategoryMapper();
         //System.out.println(cats);
         //List<Item> items = itemMapper.selectAllItem();
@@ -55,5 +55,4 @@ public class MybatisDemo {
 
         sqlSession.close();
     }
-}
-*/
+}*/

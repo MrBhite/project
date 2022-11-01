@@ -22,9 +22,9 @@ public class ProductDaoImpl implements ProductDao {
 
 
     @Override
-    //根据categoryId获得List
+    //根据category获得List
     public List<Product> getProductListByCategory(String categoryId) {
-        List<Product> productList = new ArrayList<>();
+        List<Product> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT_LIST_BY_CATEGORY);
@@ -36,7 +36,7 @@ public class ProductDaoImpl implements ProductDao {
                 product.setName(resultSet.getString("NAME"));
                 product.setDescription(resultSet.getString("description"));
                 product.setCategoryId(resultSet.getString("categoryId"));
-                productList.add(product);
+                result.add(product);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -44,23 +44,23 @@ public class ProductDaoImpl implements ProductDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return productList;
+        return result;
     }
 
     @Override
     //根据productId获得Product
     public Product getProduct(String productId) {
-        Product product = new Product();
+        Product result = new Product();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT);
             preparedStatement.setString(1,productId);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
-                product.setCategoryId(resultSet.getString("PRODUCTID"));
-                product.setName(resultSet.getString("NAME"));
-                product.setDescription(resultSet.getString("description"));
-                product.setCategoryId(resultSet.getString("categoryId"));
+                result.setCategoryId(resultSet.getString("PRODUCTID"));
+                result.setName(resultSet.getString("NAME"));
+                result.setDescription(resultSet.getString("description"));
+                result.setCategoryId(resultSet.getString("categoryId"));
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -68,13 +68,13 @@ public class ProductDaoImpl implements ProductDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return product;
+        return result;
     }
 
     @Override
     //根据keywords获得List
     public List<Product> searchProductList(String keywords) {
-        List<Product> productList = new ArrayList<>();
+        List<Product> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_PRODUCT_LIST);
@@ -86,7 +86,7 @@ public class ProductDaoImpl implements ProductDao {
                 product.setName(resultSet.getString("NAME"));
                 product.setDescription(resultSet.getString("description"));
                 product.setCategoryId(resultSet.getString("categoryId"));
-                productList.add(product);
+                result.add(product);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -94,6 +94,6 @@ public class ProductDaoImpl implements ProductDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return productList;
+        return result;
     }
 }
