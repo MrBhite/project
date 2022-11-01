@@ -1,3 +1,4 @@
+/*
 package CSUSoftWare21.web.projectJPetStore.persistence;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
@@ -55,3 +56,4 @@ public class MybatisDemo {
         sqlSession.close();
     }
 }
+*/

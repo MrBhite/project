@@ -1,8 +1,12 @@
 package CSUSoftWare21.web.projectJPetStore.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Item {
+public class Item implements Serializable {
+
+    private static final long serialVersionUID = -2159121673445254631L;
+
     private String itemId;
     private String productId;
     private BigDecimal listPrice;
@@ -17,31 +21,28 @@ public class Item {
     private Product product;
     private int quantity;
 
-    public Item(String itemId, String productId, BigDecimal listPrice, BigDecimal unitCost, int supplierId, String status, String attribute1, String attribute2, String attribute3, String attribute4, String attribute5, Product product, int quantity) {
-        this.itemId = itemId;
-        this.productId = productId;
-        this.listPrice = listPrice;
-        this.unitCost = unitCost;
-        this.supplierId = supplierId;
-        this.status = status;
-        this.attribute1 = attribute1;
-        this.attribute2 = attribute2;
-        this.attribute3 = attribute3;
-        this.attribute4 = attribute4;
-        this.attribute5 = attribute5;
-        this.product = product;
-        this.quantity = quantity;
-    }
-
-    public Item() {
-    }
-
     public String getItemId() {
         return itemId;
     }
 
     public void setItemId(String itemId) {
-        this.itemId = itemId;
+        this.itemId = itemId.trim();
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public String getProductId() {
@@ -50,6 +51,14 @@ public class Item {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public int getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
     }
 
     public BigDecimal getListPrice() {
@@ -66,14 +75,6 @@ public class Item {
 
     public void setUnitCost(BigDecimal unitCost) {
         this.unitCost = unitCost;
-    }
-
-    public int getSupplierId() {
-        return supplierId;
-    }
-
-    public void setSupplierId(int supplierId) {
-        this.supplierId = supplierId;
     }
 
     public String getStatus() {
@@ -124,38 +125,9 @@ public class Item {
         this.attribute5 = attribute5;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    @Override
     public String toString() {
-        return "Item{" +
-                "itemId='" + itemId + '\'' +
-                ", productId='" + productId + '\'' +
-                ", listPrice=" + listPrice +
-                ", unitCost=" + unitCost +
-                ", supplierId=" + supplierId +
-                ", status='" + status + '\'' +
-                ", attribute1='" + attribute1 + '\'' +
-                ", attribute2='" + attribute2 + '\'' +
-                ", attribute3='" + attribute3 + '\'' +
-                ", attribute4='" + attribute4 + '\'' +
-                ", attribute5='" + attribute5 + '\'' +
-                ", product=" + product +
-                ", quantity=" + quantity +
-                '}';
+        return "(" + getItemId() + "-" + getProductId() + ")";
     }
+
+
 }

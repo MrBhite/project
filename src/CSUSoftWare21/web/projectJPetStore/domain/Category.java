@@ -1,25 +1,21 @@
 package CSUSoftWare21.web.projectJPetStore.domain;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
+
+    private static final long serialVersionUID = 3992469837058393712L;
+
     private String categoryId;
     private String name;
     private String description;
-
-    public Category(String categoryId, String name, String description) {
-        this.categoryId = categoryId;
-        this.name = name;
-        this.description = description;
-    }
-
-    public Category() {
-    }
 
     public String getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+        this.categoryId = categoryId.trim();
     }
 
     public String getName() {
@@ -38,12 +34,8 @@ public class Category {
         this.description = description;
     }
 
-    @Override
     public String toString() {
-        return "Category{" +
-                "categoryId='" + categoryId + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return getCategoryId();
     }
+
 }

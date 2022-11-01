@@ -3,6 +3,9 @@ package CSUSoftWare21.web.projectJPetStore.domain;
 import java.math.BigDecimal;
 
 public class LineItem {
+
+    private static final long serialVersionUID = 6804536240033522156L;
+
     private int orderId;
     private int lineNumber;
     private int quantity;
@@ -11,17 +14,15 @@ public class LineItem {
     private Item item;
     private BigDecimal total;
 
-    public LineItem(int orderId, int lineNumber, int quantity, String itemId, BigDecimal unitPrice, Item item, BigDecimal total) {
-        this.orderId = orderId;
-        this.lineNumber = lineNumber;
-        this.quantity = quantity;
-        this.itemId = itemId;
-        this.unitPrice = unitPrice;
-        this.item = item;
-        this.total = total;
+    public LineItem() {
     }
 
-    public LineItem() {
+    public LineItem(int lineNumber, CartItem cartItem) {
+        this.lineNumber = lineNumber;
+        this.quantity = cartItem.getQuantity();
+        this.itemId = cartItem.getItem().getItemId();
+        this.unitPrice = cartItem.getItem().getListPrice();
+        this.item = cartItem.getItem();
     }
 
     public int getOrderId() {
@@ -40,14 +41,6 @@ public class LineItem {
         this.lineNumber = lineNumber;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getItemId() {
         return itemId;
     }
@@ -60,8 +53,12 @@ public class LineItem {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setUnitPrice(BigDecimal unitprice) {
+        this.unitPrice = unitprice;
+    }
+
+    public BigDecimal getTotal() {
+        return total;
     }
 
     public Item getItem() {
@@ -70,26 +67,24 @@ public class LineItem {
 
     public void setItem(Item item) {
         this.item = item;
+        calculateTotal();
     }
 
-    public BigDecimal getTotal() {
-        return total;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setTotal(BigDecimal total) {
-        this.total = total;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+        calculateTotal();
     }
 
-    @Override
-    public String toString() {
-        return "LineItem{" +
-                "orderId=" + orderId +
-                ", lineNumber=" + lineNumber +
-                ", quantity=" + quantity +
-                ", itemId='" + itemId + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", item=" + item +
-                ", total=" + total +
-                '}';
+    private void calculateTotal() {
+        if (item != null && item.getListPrice() != null) {
+            total = item.getListPrice().multiply(new BigDecimal(quantity));
+        } else {
+            total = null;
+        }
     }
+
 }

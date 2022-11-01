@@ -1,6 +1,9 @@
 package CSUSoftWare21.web.projectJPetStore.domain;
 
 public class Sequence {
+
+    private static final long serialVersionUID = 8278780133180137281L;
+
     private String name;
     private int nextId;
 
@@ -28,11 +31,4 @@ public class Sequence {
         this.nextId = nextId;
     }
 
-    @Override
-    public String toString() {
-        return "Sequence{" +
-                "name='" + name + '\'' +
-                ", nextId=" + nextId +
-                '}';
-    }
 }
