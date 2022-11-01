@@ -21,7 +21,7 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     //获得列表
     public List<Category> getCategoryList() {
-        List<Category> categoryList = new ArrayList<>();
+        List<Category> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             Statement statement = connection.createStatement();
@@ -31,7 +31,7 @@ public class CategoryDaoImpl implements CategoryDao {
                 category.setCategoryId(resultSet.getString("categoryId"));
                 category.setName(resultSet.getString("NAME"));
                 category.setCategoryId(resultSet.getString("description"));
-                categoryList.add(category);
+                result.add(category);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closeStaement(statement);
@@ -39,22 +39,22 @@ public class CategoryDaoImpl implements CategoryDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return categoryList;
+        return result;
     }
 
     @Override
     //根据categoryId获得List
     public Category getCategory(String categoryId) {
-        Category category = new Category();
+        Category result = new Category();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_CATEGORY);
             preparedStatement.setString(1,categoryId);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
-                category.setCategoryId(resultSet.getString("categoryId"));
-                category.setName(resultSet.getString("NAME"));
-                category.setCategoryId(resultSet.getString("description"));
+                result.setCategoryId(resultSet.getString("categoryId"));
+                result.setName(resultSet.getString("NAME"));
+                result.setCategoryId(resultSet.getString("description"));
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -62,7 +62,7 @@ public class CategoryDaoImpl implements CategoryDao {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return category;
+        return result;
     }
 
 }

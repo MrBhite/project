@@ -20,6 +20,9 @@ public class Item implements Serializable {
     private String attribute5;
     private Product product;
     private int quantity;
+    public Item(){
+        this.product=new Product();
+    }
 
     public String getItemId() {
         return itemId;
