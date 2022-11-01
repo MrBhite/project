@@ -2,6 +2,9 @@
 package CSUSoftWare21.web.projectJPetStore.persistence;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
+import CSUSoftWare21.web.projectJPetStore.domain.Category;
+import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Sequence;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,6 +16,7 @@ import java.util.List;
 
 public class MybatisDemo {
     public static void main(String[] args) throws IOException {
+
         //1.加载核心配置文件
         //定义配置文件路径
         String resource = "mybatis-config.xml";
@@ -24,11 +28,30 @@ public class MybatisDemo {
 
         //2.获取SqlSession对象,用它执行sql语句
         SqlSession sqlSession=sqlSessionFactory.openSession();
-
+/*Mybatis入门
         //3.执行sql
         List<Account> accounts=sqlSession.selectList("test.selectAll");
-
-        System.out.println(accounts);
+*/
+        /*mapper代理开发*/
+        //获取accountmapper接口的代理对象
+        AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
+        CategoryMapper categoryMapper=sqlSession.getMapper(CategoryMapper.class);
+        ItemMapper itemMapper=sqlSession.getMapper(ItemMapper.class);
+        SequenceMapper sequenceMapper=sqlSession.getMapper(SequenceMapper.class);
+        //要执行的sql语句封装成方法，方法名是id（xml文件中）
+        //List<Account> accounts=accountMapper.selectAll();
+        /*Account account = accountMapper.getAccountByUsername("ACID");
+        System.out.println(account);*/
+        //Category cats = CategoryMapper();
+        //System.out.println(cats);
+        //List<Item> items = itemMapper.selectAllItem();
+        //System.out.println(items);
+        //Item item = itemMapper.getItem("EST-10");
+        //System.out.println(item);
+        Sequence sequence=new Sequence();
+        sequence.setName("s");
+        Sequence sequence1 = sequenceMapper.getSequence(sequence);
+        System.out.println(sequence1);
 
         sqlSession.close();
     }
