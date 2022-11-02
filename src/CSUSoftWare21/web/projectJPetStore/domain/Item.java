@@ -18,10 +18,10 @@ public class Item implements Serializable {
     private String attribute3;
     private String attribute4;
     private String attribute5;
-    private Product product;
+    private Productt productt;
     private int quantity;
     public Item(){
-        this.product=new Product();
+        this.productt =new Productt();
     }
 
     public String getItemId() {
@@ -40,12 +40,12 @@ public class Item implements Serializable {
         this.quantity = quantity;
     }
 
-    public Product getProduct() {
-        return product;
+    public Productt getProduct() {
+        return productt;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProduct(Productt productt) {
+        this.productt = productt;
     }
 
     public String getProductId() {

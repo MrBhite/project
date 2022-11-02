@@ -1,7 +1,6 @@
 package CSUSoftWare21.web.projectJPetStore.persistence.impl;
 
-import CSUSoftWare21.web.projectJPetStore.domain.Category;
-import CSUSoftWare21.web.projectJPetStore.domain.Product;
+import CSUSoftWare21.web.projectJPetStore.domain.Productt;
 import CSUSoftWare21.web.projectJPetStore.persistence.DBUtil;
 import CSUSoftWare21.web.projectJPetStore.persistence.Dao.ProductDao;
 
@@ -23,20 +22,22 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     //根据category获得List
-    public List<Product> getProductListByCategory(String categoryId) {
-        List<Product> result = new ArrayList<>();
+    public List<Productt> getProductListByCategory(String categoryId) {
+        List<Productt> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT_LIST_BY_CATEGORY);
             preparedStatement.setString(1,categoryId);
             ResultSet resultSet = preparedStatement.executeQuery();
+            /*Productt test=  new Productt();
+            System.out.println(test.getName());*/
             while(resultSet.next()){
-                Product product = new Product();
-                product.setCategoryId(resultSet.getString("PRODUCTID"));
-                product.setName(resultSet.getString("NAME"));
-                product.setDescription(resultSet.getString("description"));
-                product.setCategoryId(resultSet.getString("categoryId"));
-                result.add(product);
+                Productt productt = new Productt();
+                productt.setProductId(resultSet.getString(1));
+                productt.setName(resultSet.getString(2));
+                productt.setDescription(resultSet.getString(3));
+                productt.setCategoryId(resultSet.getString(4));
+                result.add(productt);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -49,15 +50,15 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     //根据productId获得Product
-    public Product getProduct(String productId) {
-        Product result = new Product();
+    public Productt getProduct(String productId) {
+        Productt result = new Productt();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT);
             preparedStatement.setString(1,productId);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
-                result.setCategoryId(resultSet.getString("PRODUCTID"));
+                result.setProductId(resultSet.getString("PRODUCTID"));
                 result.setName(resultSet.getString("NAME"));
                 result.setDescription(resultSet.getString("description"));
                 result.setCategoryId(resultSet.getString("categoryId"));
@@ -73,20 +74,20 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     //根据keywords获得List
-    public List<Product> searchProductList(String keywords) {
-        List<Product> result = new ArrayList<>();
+    public List<Productt> searchProductList(String keywords) {
+        List<Productt> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_PRODUCT_LIST);
             preparedStatement.setString(1,keywords);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                Product product = new Product();
-                product.setCategoryId(resultSet.getString("PRODUCTID"));
-                product.setName(resultSet.getString("NAME"));
-                product.setDescription(resultSet.getString("description"));
-                product.setCategoryId(resultSet.getString("categoryId"));
-                result.add(product);
+                Productt productt = new Productt();
+                productt.setCategoryId(resultSet.getString("PRODUCTID"));
+                productt.setName(resultSet.getString("NAME"));
+                productt.setDescription(resultSet.getString("description"));
+                productt.setCategoryId(resultSet.getString("categoryId"));
+                result.add(productt);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);

@@ -1,7 +1,6 @@
 package CSUSoftWare21.web.projectJPetStore.persistence.impl;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Order;
-import CSUSoftWare21.web.projectJPetStore.domain.Product;
 import CSUSoftWare21.web.projectJPetStore.persistence.DBUtil;
 import CSUSoftWare21.web.projectJPetStore.persistence.Dao.OrderDao;
 
