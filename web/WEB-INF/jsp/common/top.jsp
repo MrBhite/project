@@ -28,38 +28,40 @@
                 <a href="mainForm"><img src="images/logo-topbar.gif" /></a>
             </div>
         </div>
-
-        <div id="Menu">
-            <div id="MenuContent">
-                <a href="#"><img align="middle" name="img_cart" src="images/cart.gif" /></a>
-                <img align="middle" src="images/separator.gif" />
-                <a href="#">Sign In</a>
-                <a href="#">Sign In</a>
-                <a href="#">Sign Out</a>
-                <img align="middle" src="images/separator.gif" />
-                <a href="#">My Account</a>
-                <img align="middle" src="images/separator.gif" />
-                <a href="help.html">?</a></div>
-        </div>
-
         <div id="Search">
             <div id="SearchContent">
                 <form action="#" method="post">
-                    <input type="text" name="keyword" size="14">
+                    <input type="text" name="keyword" size="50">
                     <input type="submit" value="Search">
                 </form>
             </div>
         </div>
 
+        <div id="Menu" >
+            <div id="MenuContent">
+                <!--<a href="#"><img align="middle" name="img_cart" src="images/cart.gif" /></a><br>-->
+                <a href="#">Cart</a><br>
+                <a href="#">Sign In</a><br>
+                <!--<img align="middle" src="images/separator.gif" />-->
+                <a href="#">Sign Out</a><br>
+                <!--<img align="middle" src="images/separator.gif" />-->
+                <a href="#">My Account</a><br>
+                <!--<img align="middle" src="images/separator.gif" />-->
+                <a href="help.html">?</a></div>
+        </div>
+        <br>
+
+
+
         <div id="QuickLinks">
             <a href="#"><img src="images/sm_fish.gif" /></a>
-            <img src="images/separator.gif" />
+            <img src="images/fish1.gif" />
             <a href="#"><img src="images/sm_dogs.gif" /></a>
-            <img src="images/separator.gif" />
+            <img src="images/dog1.gif" />
             <a href="#"><img src="images/sm_reptiles.gif" /></a>
-            <img src="images/separator.gif" />
+            <img src="images/lizard1.gif" />
             <a href="#"><img src="images/sm_cats.gif" /></a>
-            <img src="images/separator.gif" />
+            <img src="images/cat1.gif" />
             <a href="#"><img src="images/sm_birds.gif" /></a>
         </div>
 
