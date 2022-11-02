@@ -1,15 +1,15 @@
 package CSUSoftWare21.web.projectJPetStore.persistence.Dao;
 
-import CSUSoftWare21.web.projectJPetStore.domain.Product;
+import CSUSoftWare21.web.projectJPetStore.domain.Productt;
 
 import java.util.List;
 
 public interface ProductDao {
 
-    List<Product> getProductListByCategory(String categoryId);
+    List<Productt> getProductListByCategory(String categoryId);
 
-    Product getProduct(String productId);
+    Productt getProduct(String productId);
 
-    List<Product> searchProductList(String keywords);
+    List<Productt> searchProductList(String keywords);
 
 }

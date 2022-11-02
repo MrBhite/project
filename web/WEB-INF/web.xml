@@ -11,4 +11,13 @@
         <servlet-name>MainForm</servlet-name>
         <url-pattern>/mainForm</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategoryForm</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.CategoryFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryForm</servlet-name>
+        <url-pattern>/categoryForm</url-pattern>
+    </servlet-mapping>
 </web-app>
