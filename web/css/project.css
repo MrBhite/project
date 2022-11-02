@@ -1,12 +1,23 @@
-body {
-    margin: 0ex 10ex 0ex 10ex;
-    padding: 0ex;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
-    font-size: 2ex;
-    color: #333;
-    background-color: #444;
+*{
+    margin: 0;
+    padding: 0;
 }
 
+body {
+
+    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-size: 2ex;
+    /*显示用户名*/
+    color: #333;
+
+
+}
+#Header{
+    background-image: url("images/header2.png");
+    height: 200px;
+    background-color:rgb(78, 78, 78,0.45);
+}
+/* 空格*/
 pre {
     font-family: "Courier New", Courier, mono;
 
@@ -98,6 +109,7 @@ a.Button, a.Button:link, a.Button:visited {
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 1.5ex;
+    /* border-radius: 12px;*/
 }
 
 a.Button:hover {
@@ -109,19 +121,20 @@ a.Button:hover {
     width: 33%;
     height: 9ex;
     margin: 0ex 0ex 0ex 0ex;
-    padding: 0ex 0ex 0ex 0ex;
-    border-width: 0ex 0ex .3ex 0px;
+    padding: 5ex 1ex 0ex 0ex;
+    border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    /*background-color:  rgb(0, 0, 0,0.45);*/
+
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
     voice-family: inherit;
     height: 9ex;
 }
-
+/*>子选择器*/
 body>#Logo {
     height: 9ex;
 }
@@ -131,110 +144,115 @@ body>#Logo {
     height: 9ex;
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 0ex 0ex 0ex;
-    border-width: 0ex 0ex .3ex 0px;
+    border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
-    color: #eaac00;
+    /*background-color: #173f54;*/
+    color: #fff;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     text-align: center;
-    line-height: 9ex;
+    line-height: 4.5ex;
     voice-family: "\"}\"";
     voice-family: inherit;
     height: 9ex;
 }
 
 #Menu, #Menu a, #Menu a:link, #Menu a:visited, #Menu a:hover {
-    color: #eaac00;
+    color: #fff;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
 }
 
 body>#Menu {
-    height: 9ex;
-}
-
-{
+    height: 5.5ex;
+    padding-left: 10px;
 }
 
 #Search {
     width: 33%;
-    height: 9ex;
+    height: 50px;
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 0ex 0ex 0ex;
-    border-width: 0ex 0ex .3ex 0px;
+    border-width: 0;
     border-style: solid;
     border-color: #ccc;
     float: left;
     text-align: center;
-    background-color: #000;
+    /* background-color: #173f54;*/
+
     color: #eaac00;
-    line-height: 9ex;
+    line-height: 15ex;
     voice-family: "\"}\"";
     voice-family: inherit;
     height: 9ex;
 }
 
 body>#Search {
-    height: 9ex;
+    height: 30ex;
 }
 
 #Search input {
     border-width: .1ex .1ex .1ex .1ex;
     border-style: solid;
     border-color: #aaa;
-    background-color: #666;
-    color: #eaac00;
+    /*background-color: #666;*/
+    color: #000;
+    border-radius: 15px;
+    height: 30px;
 }
 
 #QuickLinks {
     text-align: center;
-    background-color: #FFF;
+    /*background-color:  rgb(0, 0, 0,0.45);*/
     width: 99%;
+    padding-top: 100px;
+    margin-top: 10px;
 }
-
+#QuickLinks>img{
+    max-width: 50px;
+}
 #PoweredBy {
     width: 30%;
-    height: 9ex;
+    height: 25ex;
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 0ex 0ex 0ex;
-    border-width: .3ex 0ex .3ex 0px;
+    border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    background-color:  rgb(0, 0, 0);
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
     voice-family: inherit;
-    height: 9ex;
+
 }
 
 body>#PoweredBy {
-    height: 9ex;
+    height: 25ex;
 }
 
 #Banner {
     width: 69%;
-    height: 9ex;
+
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 0ex 0ex 0ex;
-    border-width: .3ex 0ex .3ex 0px;
+    border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    background-color:  rgb(0, 0, 0);
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
     voice-family: inherit;
-    height: 9ex;
+    height: 25ex;
 }
 
 body>#Banner {
-    height: 9ex;
+    height: 25ex;
 }
 
 #Content {
@@ -242,7 +260,7 @@ body>#Banner {
     padding: 0ex 0ex 0ex 0ex;
     width: 99%;
     color: #333;
-    background-color: #FFF;
+    /*background-color: rgb(0, 0, 0);*/
     border-width: 0;
 }
 
@@ -256,7 +274,7 @@ body>#Banner {
     margin: 0;
     padding: 1ex;
     color: #333;
-    background-color: #FFF;
+    background-color:#fff;
     border-width: 1ex 0ex 2ex 0px;
     border-style: solid;
     border-color: #fff;
@@ -271,6 +289,7 @@ body>#Banner {
 #MainImage {
     float: left;
     background:inherit;
+
     text-align:center;
     width: 50%;
 }
@@ -291,7 +310,7 @@ body>#Banner {
     border-width:0;
 }
 #Catalog input[type="submit"]:hover {
-    color: #000;
+    color: #173f54;
     background-color: #54c07a;
     cursor:pointer;
 }
@@ -306,7 +325,7 @@ body>#Banner {
     float: right;
     border-width: .1ex 0ex .1ex 0px;
     border-style: solid;
-    border-color: #000;
+    border-color: #173f54;
 }
 
 #Cart{
