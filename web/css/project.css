@@ -5,7 +5,7 @@
 
 body {
 
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family: Arial,helvetica, tahoma, verdana, sans-serif;
     font-size: 2ex;
     /*显示用户名*/
     color: #333;
@@ -14,12 +14,12 @@ body {
 }
 #Header{
     background-image: url("images/header2.png");
-    height: 200px;
+    height: 120px;
     background-color:rgb(78, 78, 78,0.45);
 }
 /* 空格*/
 pre {
-    font-family: "Courier New", Courier, mono;
+    font-family:  Arial, Courier, mono;
 
     font-style: normal;
     background-color: #FFFFFF;
@@ -54,7 +54,7 @@ h3 {
 }
 
 p {
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family:  Arial,helvetica, tahoma, arial, verdana, sans-serif;
 
     margin: 0ex 0ex 0ex 0ex;
     padding: 2ex;
@@ -65,7 +65,7 @@ img {
 }
 
 li {
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family: Arial, helvetica, tahoma, arial, verdana, sans-serif;
 
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex;
@@ -93,9 +93,9 @@ th {
 
 a, a:visited, a:link {
     color: #039;
-
+    padding-right: 40px;
     text-decoration: none;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family:  Arial,helvetica, tahoma, arial, verdana, sans-serif;
 }
 
 a:hover {
@@ -107,7 +107,7 @@ a.Button, a.Button:link, a.Button:visited {
     color: #fff;
     background-color: #005e21;
     text-decoration: none;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family: Arial, helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 1.5ex;
     /* border-radius: 12px;*/
 }
@@ -121,7 +121,7 @@ a.Button:hover {
     width: 33%;
     height: 9ex;
     margin: 0ex 0ex 0ex 0ex;
-    padding: 5ex 1ex 0ex 0ex;
+    padding: 0ex 1ex 0ex 0ex;
     border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #ccc;
@@ -133,6 +133,10 @@ a.Button:hover {
     voice-family: "\"}\"";
     voice-family: inherit;
     height: 9ex;
+
+}
+#Logo img{
+    max-width: 150px;
 }
 /*>子选择器*/
 body>#Logo {
@@ -140,29 +144,63 @@ body>#Logo {
 }
 
 #Menu {
-    width: 33%;
+    width: 10%;
     height: 9ex;
     margin: 0ex 0ex 0ex 0ex;
-    padding: 0ex 0ex 0ex 0ex;
+    padding: 3.5ex 0ex 0ex 0ex;
     border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
-    border-color: #ccc;
     float: left;
-    /*background-color: #173f54;*/
-    color: #fff;
     text-decoration: none;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family:  Arial,helvetica, tahoma, arial, verdana, sans-serif;
     text-align: center;
     line-height: 4.5ex;
-    voice-family: "\"}\"";
-    voice-family: inherit;
     height: 9ex;
+    position: relative;
+    display: inline-block;
+}
+#MenuDropdownButton{
+
+    color: #000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+#MenuDropdownButton img{
+    max-width: 60px;
+}
+#MenuContent{
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    max-width: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#MenuContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-#Menu, #Menu a, #Menu a:link, #Menu a:visited, #Menu a:hover {
-    color: #fff;
+#MenuContent a:hover {
+    background-color:black;
+    font-style: normal;
+    color: #fff;}
+
+#Menu:hover #MenuContent {
+    display: block;
+}
+#Menu:hover #MenuDropdownButton {
+    /*background-color: #000;*/
+}
+#Menu, #Menu a, #Menu a:link, #Menu a:visited {
+
     text-decoration: none;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family:  Arial,helvetica, tahoma, arial, verdana, sans-serif;
 }
 
 body>#Menu {
@@ -176,42 +214,39 @@ body>#Menu {
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 0ex 0ex 0ex;
     border-width: 0;
-    border-style: solid;
-    border-color: #ccc;
-    float: left;
-    text-align: center;
-    /* background-color: #173f54;*/
 
+    float: left;
+    text-align: left;
+    /* background-color: #173f54;*/
     color: #eaac00;
-    line-height: 15ex;
-    voice-family: "\"}\"";
-    voice-family: inherit;
-    height: 9ex;
+
+
 }
 
 body>#Search {
-    height: 30ex;
+    height: 40ex;
 }
 
 #Search input {
-    border-width: .1ex .1ex .1ex .1ex;
-    border-style: solid;
-    border-color: #aaa;
-    /*background-color: #666;*/
+
+    /* background-color: #666; */
     color: #000;
+    padding-top: 20px;
+    margin-top: 17px;
     border-radius: 15px;
-    height: 30px;
+    height: 28px;
 }
+
 
 #QuickLinks {
     text-align: center;
     /*background-color:  rgb(0, 0, 0,0.45);*/
     width: 99%;
-    padding-top: 100px;
+    padding-top: 10px;
     margin-top: 10px;
 }
 #QuickLinks>img{
-    max-width: 50px;
+    max-width: 60px;
 }
 #PoweredBy {
     width: 30%;
@@ -305,7 +340,7 @@ body>#Banner {
     color: #fff;
     background-color: #005e21;
     text-decoration: none;
-    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-family:  Arial,helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 1.5ex;
     border-width:0;
 }
