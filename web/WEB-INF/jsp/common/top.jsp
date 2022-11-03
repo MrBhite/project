@@ -25,16 +25,16 @@
 
         <div id="Logo">
             <div id="LogoContent">
-                <a href="mainForm"><img src="images/logo-topbar.gif" /></a>
+                <a href="main"><img src="images/logo-topbar.gif" /></a>
             </div>
         </div>
 
         <div id="Menu">
             <div id="MenuContent">
-                <a href="#"><img align="middle" name="img_cart" src="images/cart.gif" /></a>
+                <a href="cart"><img align="middle" name="img_cart" src="images/cart.gif" /></a>
                 <img align="middle" src="images/separator.gif" />
-                <a href="#">Sign In</a>
-                <a href="#">Sign In</a>
+                <a href="signOnInterface">Sign In</a>
+                <a href="signOnInterface">Sign In</a>
                 <a href="#">Sign Out</a>
                 <img align="middle" src="images/separator.gif" />
                 <a href="#">My Account</a>
@@ -52,15 +52,15 @@
         </div>
 
         <div id="QuickLinks">
-            <a href="#"><img src="images/sm_fish.gif" /></a>
+            <a href="category?categoryId=FISH"><img src="images/sm_fish.gif" /></a>
             <img src="images/separator.gif" />
-            <a href="#"><img src="images/sm_dogs.gif" /></a>
+            <a href="category?categoryId=DOGS"><img src="images/sm_dogs.gif" /></a>
             <img src="images/separator.gif" />
-            <a href="#"><img src="images/sm_reptiles.gif" /></a>
+            <a href="category?categoryId=CATS"><img src="images/sm_reptiles.gif" /></a>
             <img src="images/separator.gif" />
-            <a href="#"><img src="images/sm_cats.gif" /></a>
+            <a href="category?categoryId=REPTILES"><img src="images/sm_cats.gif" /></a>
             <img src="images/separator.gif" />
-            <a href="#"><img src="images/sm_birds.gif" /></a>
+            <a href="category?categoryId=BIRDS"><img src="images/sm_birds.gif" /></a>
         </div>
 
     </div>

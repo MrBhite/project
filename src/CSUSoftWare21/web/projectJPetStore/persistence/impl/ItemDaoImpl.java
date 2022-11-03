@@ -1,6 +1,6 @@
 package CSUSoftWare21.web.projectJPetStore.persistence.impl;
 
-import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Itemm;
 import CSUSoftWare21.web.projectJPetStore.persistence.DBUtil;
 import CSUSoftWare21.web.projectJPetStore.persistence.Dao.ItemDao;
 
@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 
 //注意：
@@ -71,31 +70,31 @@ private static final String GET_ITEM =
     }
 
     @Override
-    public List<Item> getItemListByProduct(String productId) {
-        List<Item> result = new ArrayList<>();
+    public List<Itemm> getItemListByProduct(String productId) {
+        List<Itemm> result = new ArrayList<>();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ITEM_LIST_BY_PRODUCT);
             preparedStatement.setString(1,productId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                Item item = new Item();
-                item.setItemId(resultSet.getString("ITEMID"));
-                item.setListPrice(resultSet.getBigDecimal("LISTPRICE"));
-                item.setUnitCost(resultSet.getBigDecimal("UNITCOST"));
-                item.setSupplierId(resultSet.getInt("supplierId"));
-                item.getProduct().setProductId(resultSet.getString("product.productId"));
-                item.getProduct().setName(resultSet.getString("product.name"));
-                item.getProduct().setDescription(resultSet.getString("product.description"));
-                item.getProduct().setCategoryId(resultSet.getString("product.categoryId"));
-                item.setStatus(resultSet.getString("STATUS"));
-                item.setAttribute1(resultSet.getString("attribute1"));
-                item.setAttribute2(resultSet.getString("attribute2"));
-                item.setAttribute3(resultSet.getString("attribute3"));
-                item.setAttribute4(resultSet.getString("attribute4"));
-                item.setAttribute5(resultSet.getString("attribute5"));
-                item.setProductId(productId);
-                result.add(item);
+                Itemm itemm = new Itemm();
+                itemm.setItemId(resultSet.getString("ITEMID"));
+                itemm.setListPrice(resultSet.getBigDecimal("LISTPRICE"));
+                itemm.setUnitCost(resultSet.getBigDecimal("UNITCOST"));
+                itemm.setSupplierId(resultSet.getInt("supplierId"));
+                itemm.getProduct().setProductId(resultSet.getString("product.productId"));
+                itemm.getProduct().setName(resultSet.getString("product.name"));
+                itemm.getProduct().setDescription(resultSet.getString("product.description"));
+                itemm.getProduct().setCategoryId(resultSet.getString("product.categoryId"));
+                itemm.setStatus(resultSet.getString("STATUS"));
+                itemm.setAttribute1(resultSet.getString("attribute1"));
+                itemm.setAttribute2(resultSet.getString("attribute2"));
+                itemm.setAttribute3(resultSet.getString("attribute3"));
+                itemm.setAttribute4(resultSet.getString("attribute4"));
+                itemm.setAttribute5(resultSet.getString("attribute5"));
+                itemm.setProductId(productId);
+                result.add(itemm);
             }
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
@@ -107,8 +106,8 @@ private static final String GET_ITEM =
     }
 
     @Override
-    public Item getItem(String itemId) {
-        Item result = new Item();
+    public Itemm getItem(String itemId) {
+        Itemm result = new Itemm();
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ITEM);

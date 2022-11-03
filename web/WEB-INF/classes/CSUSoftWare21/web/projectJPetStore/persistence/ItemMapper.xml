@@ -5,11 +5,11 @@
 <mapper namespace="CSUSoftWare21.web.projectJPetStore.persistence.ItemMapper">
 
 
-    <select id="selectAllItem" resultType="CSUSoftWare21.web.projectJPetStore.domain.Item">
-        select * from item;
+    <select id="selectAllItem" resultType="CSUSoftWare21.web.projectJPetStore.domain.Itemm">
+        select * from itemm;
     </select>
 
-    <select id="getItemListByProduct" parameterType="string" resultType="CSUSoftWare21.web.projectJPetStore.domain.Item">
+    <select id="getItemListByProduct" parameterType="string" resultType="CSUSoftWare21.web.projectJPetStore.domain.Itemm">
         SELECT
         I.ITEMID,
         LISTPRICE,
@@ -30,7 +30,7 @@
         AND I.PRODUCTID = #{value}
     </select>
 
-    <select id="getItem" parameterType="string" resultType="CSUSoftWare21.web.projectJPetStore.domain.Item">
+    <select id="getItem" parameterType="string" resultType="CSUSoftWare21.web.projectJPetStore.domain.Itemm">
         select
         I.ITEMID,
         LISTPRICE,

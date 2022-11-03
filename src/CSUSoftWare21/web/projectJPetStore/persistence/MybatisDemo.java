@@ -3,7 +3,7 @@ package CSUSoftWare21.web.projectJPetStore.persistence;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.domain.Category;
-import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Itemm;
 import CSUSoftWare21.web.projectJPetStore.domain.Sequence;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -44,9 +44,9 @@ public class MybatisDemo {
         System.out.println(account);*//*
         //Category cats = CategoryMapper();
         //System.out.println(cats);
-        //List<Item> items = itemMapper.selectAllItem();
+        //List<Itemm> items = itemMapper.selectAllItem();
         //System.out.println(items);
-        //Item item = itemMapper.getItem("EST-10");
+        //Itemm item = itemMapper.getItem("EST-10");
         //System.out.println(item);
         Sequence sequence=new Sequence();
         sequence.setName("s");

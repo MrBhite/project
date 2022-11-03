@@ -1,6 +1,6 @@
 package CSUSoftWare21.web.projectJPetStore.persistence.Dao;
 
-import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Itemm;
 
 import java.util.List;
 import java.util.Map;
@@ -11,8 +11,8 @@ public interface ItemDao {
 
     int getInventoryQuantity(String itemId);
 
-    List<Item> getItemListByProduct(String productId);
+    List<Itemm> getItemListByProduct(String productId);
 
-    Item getItem(String itemId);
+    Itemm getItem(String itemId);
 
 }

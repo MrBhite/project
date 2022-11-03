@@ -8,9 +8,9 @@
 --%>
 <%@ include file="../common/top.jsp"%>
 
-<div id="BackLink"><stripes:link
-        beanclass="org.mybatis.jpetstore.web.actions.CatalogActionBean">
-    Return to Main Menu</stripes:link></div>
+<div id="BackLink">
+    <a href="main">Return to Main Menu</a>
+</div>
 
 <div id="Catalog">
 
@@ -21,12 +21,10 @@
             <th>Product ID</th>
             <th>Name</th>
         </tr>
-        <c:forEach var="productt" items="${sessionScope.producttList}">
+        <c:forEach var="product" items="${sessionScope.producttList}">
             <tr>
-                <td>
-                    <a href="#">${productt.productId}</a>
-                </td>
-                <td>${productt.name}</td>
+                <td><a href="product?productId=${product.productId}">${product.productId}</a></td>
+                <td>${product.name}</td>
             </tr>
         </c:forEach>
     </table>

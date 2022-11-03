@@ -254,7 +254,7 @@ public class Order {
         return lineItems;
     }
 
-    public void initOrder(Account account, Cart cart) {
+    public void initOrder(Account account, Cartt cart) {
 
         username = account.getUsername();
         orderDate = new Date();

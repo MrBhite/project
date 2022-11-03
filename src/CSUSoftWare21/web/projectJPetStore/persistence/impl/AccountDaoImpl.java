@@ -38,13 +38,14 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Account getAccountByUsername(String username) {
-        Account result = new Account();
+        Account result = null;
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ACCOUNT_BY_USER_NAME);
             preparedStatement.setString(1,username);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
+                result = new Account();
                 result.setUsername(resultSet.getString("USERNAME"));
                 result.setEmail(resultSet.getString("EMAIL"));
                 result.setFirstName(resultSet.getString("FIRSTNAME"));
@@ -74,7 +75,7 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Account getAccountByUsernameAndPassword(Account account) {
-        Account result = new Account();
+        Account result = null;
         try {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ACCOUNT_BY_USERNAME_AND_PASSWORD);
@@ -82,6 +83,7 @@ public class AccountDaoImpl implements AccountDao {
             preparedStatement.setString(2,account.getPassword());
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
+                result = new Account();
                 result.setUsername(resultSet.getString("USERNAME"));
                 result.setEmail(resultSet.getString("EMAIL"));
                 result.setFirstName(resultSet.getString("FIRSTNAME"));

@@ -3,7 +3,7 @@ package CSUSoftWare21.web.projectJPetStore.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Item implements Serializable {
+public class Itemm implements Serializable {
 
     private static final long serialVersionUID = -2159121673445254631L;
 
@@ -20,7 +20,7 @@ public class Item implements Serializable {
     private String attribute5;
     private Productt productt;
     private int quantity;
-    public Item(){
+    public Itemm(){
         this.productt =new Productt();
     }
 

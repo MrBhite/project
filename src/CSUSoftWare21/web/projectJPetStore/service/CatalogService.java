@@ -1,7 +1,7 @@
 package CSUSoftWare21.web.projectJPetStore.service;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Category;
-import CSUSoftWare21.web.projectJPetStore.domain.Item;
+import CSUSoftWare21.web.projectJPetStore.domain.Itemm;
 import CSUSoftWare21.web.projectJPetStore.domain.Productt;
 import CSUSoftWare21.web.projectJPetStore.persistence.Dao.CategoryDao;
 import CSUSoftWare21.web.projectJPetStore.persistence.Dao.ItemDao;
@@ -12,13 +12,13 @@ import CSUSoftWare21.web.projectJPetStore.persistence.impl.ProductDaoImpl;
 
 import java.util.List;
 
-public class CatelogService {
+public class CatalogService {
 
     private CategoryDao categoryDao;
     private ItemDao itemDao;
     private ProductDao productDao;
 
-    public CatelogService(){
+    public CatalogService(){
         this.categoryDao = new CategoryDaoImpl();
         this.itemDao = new ItemDaoImpl();
         this.productDao = new ProductDaoImpl();
@@ -45,11 +45,11 @@ public class CatelogService {
         return productDao.searchProductList("%" + keyword.toLowerCase() + "%");
     }
 
-    public List<Item> getItemListByProduct(String productId) {
+    public List<Itemm> getItemListByProduct(String productId) {
         return itemDao.getItemListByProduct(productId);
     }
 
-    public Item getItem(String itemId) {
+    public Itemm getItem(String itemId) {
         return itemDao.getItem(itemId);
     }
 

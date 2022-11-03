@@ -3,7 +3,7 @@ package CSUSoftWare21.web.projectJPetStore.domain;
 import java.math.BigDecimal;
 import java.util.*;
 
-public class Cart {
+public class Cartt {
 
     private static final long serialVersionUID = 8329559983943337176L;
     private final Map<String, CartItem> itemMap = Collections.synchronizedMap(new HashMap<String, CartItem>());
@@ -29,20 +29,20 @@ public class Cart {
         return itemMap.containsKey(itemId);
     }
 
-    public void addItem(Item item, boolean isInStock) {
-        CartItem cartItem = (CartItem) itemMap.get(item.getItemId());
+    public void addItem(Itemm itemm, boolean isInStock) {
+        CartItem cartItem = (CartItem) itemMap.get(itemm.getItemId());
         if (cartItem == null) {
             cartItem = new CartItem();
-            cartItem.setItem(item);
+            cartItem.setItem(itemm);
             cartItem.setQuantity(0);
             cartItem.setInStock(isInStock);
-            itemMap.put(item.getItemId(), cartItem);
+            itemMap.put(itemm.getItemId(), cartItem);
             itemList.add(cartItem);
         }
         cartItem.incrementQuantity();
     }
 
-    public Item removeItemById(String itemId) {
+    public Itemm removeItemById(String itemId) {
         CartItem cartItem = (CartItem) itemMap.remove(itemId);
         if (cartItem == null) {
             return null;
@@ -67,7 +67,7 @@ public class Cart {
         Iterator<CartItem> items = getAllCartItems();
         while (items.hasNext()) {
             CartItem cartItem = (CartItem) items.next();
-            Item item = cartItem.getItem();
+            Itemm item = cartItem.getItem();
             BigDecimal listPrice = item.getListPrice();
             BigDecimal quantity = new BigDecimal(String.valueOf(cartItem.getQuantity()));
             subTotal = subTotal.add(listPrice.multiply(quantity));

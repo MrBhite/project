@@ -3,21 +3,95 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>MainForm</servlet-name>
-        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.MainFormServlet</servlet-class>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.MainFormServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MainForm</servlet-name>
-        <url-pattern>/mainForm</url-pattern>
+        <url-pattern>/main</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>CategoryForm</servlet-name>
-        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.CategoryFormServlet</servlet-class>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.CategoryFormServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CategoryForm</servlet-name>
-        <url-pattern>/categoryForm</url-pattern>
+        <url-pattern>/category</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductForm</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.ProductFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductForm</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ItemForm</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.ItemFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemForm</servlet-name>
+        <url-pattern>/item</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CartFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.CartFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartFormServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddItemToCartForm</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.AddItemToCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItemToCartForm</servlet-name>
+        <url-pattern>/addItemToCart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.UpdateCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCartServlet</servlet-name>
+        <url-pattern>/updateCart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.RemoveCartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <url-pattern>/removeCartItem</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SignOnFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.SignOnFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignOnFormServlet</servlet-name>
+        <url-pattern>/signOnInterface</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignOnServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.SignOnServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignOnServlet</servlet-name>
+        <url-pattern>/signOn</url-pattern>
     </servlet-mapping>
 </web-app>

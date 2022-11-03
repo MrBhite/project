@@ -34,7 +34,7 @@ public class TestImpl extends HttpServlet {
         /*SequenceDaoImpl sequenceDao = new SequenceDaoImpl();
         System.out.println(sequenceDao.getSequence(new Sequence("ordernum",100)).getName());*/
 
-        /*CatelogService catelogService = new CatelogService();
+        /*CatalogService catelogService = new CatalogService();
         String categoryId = "BIRDS";
         Category category = catelogService.getCategory(categoryId);
         List<Productt> productList = catelogService.getProductListByCategory(categoryId);

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class CartItem {
     private static final long serialVersionUID = 6620528781626504362L;
 
-    private Item item;
+    private Itemm item;
     private int quantity;
     private boolean inStock;
     private BigDecimal total;
@@ -22,12 +22,12 @@ public class CartItem {
         return total;
     }
 
-    public Item getItem() {
+    public Itemm getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItem(Itemm itemm) {
+        this.item = itemm;
         calculateTotal();
     }
 

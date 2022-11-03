@@ -1,4 +1,4 @@
-package CSUSoftWare21.web.projectJPetStore.web.servlet;
+package CSUSoftWare21.web.projectJPetStore.web.servlet.catalog;
 /*1031 这里一直报错，按提示导入了javax里的*/
 /*import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -19,7 +19,6 @@ public class MainFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Productt productt = new Productt();
-        System.out.println(productt.getName());
         req.getRequestDispatcher(MAIN_FORM).forward(req,resp);
     }
 }

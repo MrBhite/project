@@ -11,7 +11,7 @@ public class LineItem {
     private int quantity;
     private String itemId;
     private BigDecimal unitPrice;
-    private Item item;
+    private Itemm itemm;
     private BigDecimal total;
 
     public LineItem() {
@@ -22,7 +22,7 @@ public class LineItem {
         this.quantity = cartItem.getQuantity();
         this.itemId = cartItem.getItem().getItemId();
         this.unitPrice = cartItem.getItem().getListPrice();
-        this.item = cartItem.getItem();
+        this.itemm = cartItem.getItem();
     }
 
     public int getOrderId() {
@@ -61,12 +61,12 @@ public class LineItem {
         return total;
     }
 
-    public Item getItem() {
-        return item;
+    public Itemm getItem() {
+        return itemm;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItem(Itemm itemm) {
+        this.itemm = itemm;
         calculateTotal();
     }
 
@@ -80,8 +80,8 @@ public class LineItem {
     }
 
     private void calculateTotal() {
-        if (item != null && item.getListPrice() != null) {
-            total = item.getListPrice().multiply(new BigDecimal(quantity));
+        if (itemm != null && itemm.getListPrice() != null) {
+            total = itemm.getListPrice().multiply(new BigDecimal(quantity));
         } else {
             total = null;
         }
