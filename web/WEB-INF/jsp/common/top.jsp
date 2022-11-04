@@ -27,6 +27,7 @@
     <div id="Logo">
         <div id="LogoContent">
             <a href="mainForm"><img id="jpet" src="images/jpetstore.png" /></a>
+            <!--不用+../,因为是重定向的-->
         </div>
 
 
