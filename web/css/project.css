@@ -9,13 +9,14 @@ body {
     font-size: 2ex;
     /*显示用户名*/
     color: #333;
+    background-color: #ccc;
 
 
 }
 #Header{
-    background-image: url("images/header2.png");
+    /*background-image: url("images/header2.png");*/
     height: 120px;
-    background-color:rgb(78, 78, 78,0.45);
+    background-color:#000;
 }
 /* 空格*/
 pre {
@@ -118,8 +119,8 @@ a.Button:hover {
 }
 
 #Logo {
-    width: 33%;
-    height: 9ex;
+
+    height: 8ex;
     margin: 0ex 0ex 0ex 0ex;
     padding: 0ex 1ex 0ex 0ex;
     border-width: 0ex 0ex 0ex 0px;
@@ -127,11 +128,9 @@ a.Button:hover {
     border-color: #ccc;
     float: left;
     /*background-color:  rgb(0, 0, 0,0.45);*/
-
+    margin-left: 500px;
     color: #fff;
     line-height: 9ex;
-    voice-family: "\"}\"";
-    voice-family: inherit;
     height: 9ex;
 
 }
@@ -209,14 +208,13 @@ body>#Menu {
 }
 
 #Search {
-    width: 33%;
+    /*width: 33%*/
     height: 50px;
-    margin: 0ex 0ex 0ex 0ex;
-    padding: 0ex 0ex 0ex 0ex;
+
     border-width: 0;
 
-    float: left;
-    text-align: left;
+    float: right;
+
     /* background-color: #173f54;*/
     color: #eaac00;
 
@@ -248,6 +246,9 @@ body>#Search {
 #QuickLinks>img{
     max-width: 60px;
 }
+#Footer{
+    background-image: url("images/header2.png");
+}
 #PoweredBy {
     width: 30%;
     height: 25ex;
@@ -269,6 +270,12 @@ body>#PoweredBy {
     height: 25ex;
 }
 
+
+div#Welcome {
+    text-align: right;
+    /* tab-size: 50px; */
+    font-size: 30px;
+}
 #Banner {
     width: 69%;
 
@@ -289,7 +296,39 @@ body>#PoweredBy {
 body>#Banner {
     height: 25ex;
 }
+#Sidebar{
+    margin-right: 100px;
+    height: 600px;
+}
+#Sidebar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    background-color: #ececec;
+    /*position: fixed;*/
+    height: 100%;
+    overflow: auto;
+}
 
+#Sidebar li a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-style: oblique;
+    font-size: 25px;
+}
+
+#Sidebar li a.active{
+    background-color: #333;
+    color: white;
+}
+
+#Sidebar li a:hover:not(.active){
+    background-color: #333;
+    color: white;
+}
 #Content {
     margin: 0;
     padding: 0ex 0ex 0ex 0ex;
@@ -307,18 +346,18 @@ body>#Banner {
 
 #Main {
     margin: 0;
-    padding: 1ex;
+
     color: #333;
-    background-color:#fff;
-    border-width: 1ex 0ex 2ex 0px;
+
+    border-width: 0ex 0ex 0ex 0px;
     border-style: solid;
     border-color: #fff;
 }
 
 #Sidebar {
-    float: left;
+    float: right;
     background:inherit;
-    width: 30%;
+    width: 405px;
 }
 
 #MainImage {
@@ -374,4 +413,60 @@ body>#Banner {
     float: left;
     background-color:#ccc;
     text-align:left;
+}
+.rollimages {   /*轮换图片的大小*/
+    position: relative;
+    margin-left: 100px;
+    overflow: hidden;
+
+    height: 569.53px;
+    width: 900px;
+
+}
+
+.rollimages .slide{
+    width: 700px;
+    height: 500px;
+    position: absolute;
+}
+
+#petlink{
+    width: 1000px;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-left: 150px;
+    margin-left: 100px;
+    background-color: #ececec;
+    padding-right: 150px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+#petlink ul{
+    overflow:hidden;
+}
+#petlink ul li{
+    float:left;
+    width:170px;
+    margin: 0 13px 0 13px;
+}
+#petlink ul li a{ display:block;
+    width: 180px;
+    height: 180px;
+    padding: 13px 15px 14px 15px;
+}
+
+#petlink ul li a img{
+    border-radius: 50%;
+    display:block;
+    width: 180px;
+    height: 180px;
+}
+
+#petlink ul p{
+    text-align:center;
+    width: 900px;
+
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
 }

@@ -12,7 +12,7 @@
 
 <body >
 <div id="Header">
-    <div id="Menu" >
+    <div id="Menu">
         <!--MenuDropdownButton打开下拉菜单-->
         <span id="MenuDropdownButton"><img src="images/menu-菜单.svg" alt="Menu"></span>
         <!--div内下拉菜单内容-->
@@ -24,34 +24,40 @@
             <a href="help.html">?</a>
         </div>
     </div>
-    <div id="Search">
-        <div id="SearchContent">
-            <form action="#" method="post">
-                <input id="searchtext" type="text" name="keyword" size="60" >
-                <input id="searchicon" type="image" src="images/未标题-2.png" alt="Submit"  size="50" align="bottom"/>
-            </form>
-            </form>
-        </div>
-    </div>
     <div id="Logo">
         <div id="LogoContent">
             <a href="mainForm"><img id="jpet" src="images/jpetstore.png" /></a>
         </div>
+
+
+
     </div>
+    <div id="Search">
+        <div id="SearchContent">
+            <form action="#" method="post">
+                <input id="searchtext" type="text" name="keyword" size="60">
+                <input id="searchicon" type="image" src="images/未标题-2.png" alt="Submit" size="50" align="bottom" />
+            </form>
+            </form>
+        </div>
 
+    </div>
+    <!--
+    <br>
+    <div id="QuickLinks">
+        <a href="#"><img src="images/sm_fish.gif" /></a>
 
+        <a href="#"><img src="images/sm_dogs.gif" /></a>
+
+        <a href="#"><img src="images/sm_reptiles.gif" /></a>
+
+        <a href="#"><img src="images/sm_cats.gif" /></a>
+
+        <a href="#"><img src="images/sm_birds.gif" /></a>
+
+    </div>
+-->
 </div>
-<div id="QuickLinks">
-    <a href="#"><img src="images/sm_fish.gif" /></a>
 
-    <a href="#"><img src="images/sm_dogs.gif" /></a>
-
-    <a href="#"><img src="images/sm_reptiles.gif" /></a>
-
-    <a href="#"><img src="images/sm_cats.gif" /></a>
-
-    <a href="#"><img src="images/sm_birds.gif" /></a>
-
-</div>
 
 <div id="Content"><stripes:messages />
