@@ -1,9 +1,4 @@
-package CSUSoftWare21.web.projectJPetStore;
-
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.xml.DOMConfigurator;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,12 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Log4JTest extends HttpServlet {
-    /*1.å¾—åˆ°è®°å½•å™¨*/
     private static Logger logger = Logger.getLogger(Log4JTest.class);
 
 
     public Log4JTest() {
-        super();
     }
 
     public void init(ServletConfig config) throws ServletException {
@@ -28,15 +21,13 @@ public class Log4JTest extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        // è®°å½•infoçº§åˆ«çš„ä¿¡æ¯
-        logger.info("info message.");
-        // è®°å½•errorçº§åˆ«çš„ä¿¡æ¯
-        logger.error("error message.");
+        // ¼ÇÂ¼info¼¶±ğµÄĞÅÏ¢
+        logger.info("This is info message.");
+        // ¼ÇÂ¼error¼¶±ğµÄĞÅÏ¢
+        logger.error("This is error message.");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
 }
-

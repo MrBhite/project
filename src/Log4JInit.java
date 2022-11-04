@@ -1,4 +1,5 @@
-package CSUSoftWare21.web.projectJPetStore;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.PropertyConfigurator;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -9,34 +10,32 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.BasicConfigurator;
 
 public class Log4JInit extends HttpServlet {
     public Log4JInit(){
         super();
     }
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("åˆå§‹åŒ– log4jæ—¥å¿—è®¾ç½®ä¿¡æ¯");
-        /*è¯»å‡ºé…ç½®æ–‡ä»¶ï¼Œç„¶åè°ƒç”¨configureå‡½æ•°ã€‚
-        ä¸€ã€æ–‡ä»¶åœ¨å“ª
-        äºŒã€æ­£ç¡®çš„æ–‡ä»¶ç±»å‹*/
+        System.out.println("³õÊ¼»¯ log4jÈÕÖ¾ÉèÖÃĞÅÏ¢");
+        /*¶Á³öÅäÖÃÎÄ¼ş£¬È»ºóµ÷ÓÃconfigureº¯Êı¡£
+        Ò»¡¢ÎÄ¼şÔÚÄÄ
+        ¶ş¡¢ÕıÈ·µÄÎÄ¼şÀàĞÍ*/
         String log4jLocation = config.getInitParameter("log4j-properties");
 
         ServletContext sc = config.getServletContext();
 
         if (log4jLocation == null) {
-            System.err.println("æ²¡æœ‰ log4j-properties åˆå§‹åŒ–çš„æ–‡ä»¶, ä½¿ç”¨ BasicConfiguratoråˆå§‹åŒ–");
+            System.err.println("Ã»ÓĞ log4j-properties ³õÊ¼»¯µÄÎÄ¼ş, Ê¹ÓÃ BasicConfigurator³õÊ¼»¯");
             BasicConfigurator.configure();
         } else {
             String webAppPath = sc.getRealPath("/");
             String log4jProp = webAppPath + log4jLocation;
             File ori = new File(log4jProp);
             if (ori.exists()) {
-                System.out.println("ä½¿ç”¨: " + log4jProp+"åˆå§‹åŒ–æ—¥å¿—è®¾ç½®ä¿¡æ¯");
+                System.out.println("Ê¹ÓÃ: " + log4jProp+"³õÊ¼»¯ÈÕÖ¾ÉèÖÃĞÅÏ¢");
                 PropertyConfigurator.configure(log4jProp);
             } else {
-                System.err.println(log4jProp + " æ–‡ä»¶æœªæ‰¾åˆ°ï¼Œ ä½¿ç”¨ BasicConfiguratoråˆå§‹åŒ–");
+                System.err.println(log4jProp + " ÎÄ¼şÎ´ÕÒµ½£¬ Ê¹ÓÃ BasicConfigurator³õÊ¼»¯");
                 BasicConfigurator.configure();
             }
         }
@@ -47,6 +46,7 @@ public class Log4JInit extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

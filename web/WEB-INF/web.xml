@@ -22,6 +22,15 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>Log4JTest</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.Log4JTest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Log4JTest</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
 
     <!--用来启动 log4jConfigLocation的servlet -->
     <servlet>
@@ -29,7 +38,7 @@
         <servlet-class>CSUSoftWare21.web.projectJPetStore.Log4JInit</servlet-class>
         <init-param>
             <!--这个参数Log4JInit里要用-->
-            <param-name>log4j-properties</param-name>
+            <param-name>log4j-properties-location</param-name>
             <param-value>/WEB-INF/classes/log4j.properties</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
@@ -40,14 +49,6 @@
         <url-pattern>/init</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>Log4JTest</servlet-name>
-        <servlet-class>CSUSoftWare21.web.projectJPetStore.Log4JTest</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>Log4JTest</servlet-name>
-        <url-pattern>/test</url-pattern>
-    </servlet-mapping>
 
 </web-app>
