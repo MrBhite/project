@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryDaoImpl implements CategoryDao {
-
+//as取别名，因为数据库里的列名和pojo里的变量名不一致
     private static final String GET_CATEGORY_LIST =
             "SELECT CATID AS categoryId,NAME,DESCN AS description FROM CATEGORY";
     private static final String GET_CATEGORY =
@@ -51,11 +51,13 @@ public class CategoryDaoImpl implements CategoryDao {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_CATEGORY);
             preparedStatement.setString(1,categoryId);
             ResultSet resultSet = preparedStatement.executeQuery();
+
             if(resultSet.next()){
-                result.setCategoryId(resultSet.getString("categoryId"));
+                result.setCategoryId(resultSet.getString("categoryId"));//如果用列名要写as之后的
                 result.setName(resultSet.getString("NAME"));
-                result.setCategoryId(resultSet.getString("description"));
+                result.setDescription(resultSet.getString("description"));
             }
+            System.out.println(result);
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
             DBUtil.closeConnection(connection);
@@ -64,5 +66,6 @@ public class CategoryDaoImpl implements CategoryDao {
         }
         return result;
     }
+
 
 }

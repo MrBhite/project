@@ -12,6 +12,7 @@ public class Log4JTest extends HttpServlet {
 
 
     public Log4JTest() {
+        super();
     }
 
     public void init(ServletConfig config) throws ServletException {
@@ -21,10 +22,11 @@ public class Log4JTest extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 记录info级别的信息
+        // 记录不同级别的信息
+
         logger.info("This is info message.");
-        // 记录error级别的信息
         logger.error("This is error message.");
+        logger.info("This is info message.");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

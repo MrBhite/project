@@ -7,8 +7,9 @@ import CSUSoftWare21.web.projectJPetStore.persistence.Dao.AccountDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-//未完成
+
 public class AccountDaoImpl implements AccountDao {
 
     private static final String GET_ACCOUNT_BY_USER_NAME =
@@ -70,6 +71,8 @@ public class AccountDaoImpl implements AccountDao {
             e.printStackTrace();
         }
         return result;
+
+
     }
 
     @Override

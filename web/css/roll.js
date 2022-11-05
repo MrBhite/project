@@ -6,7 +6,7 @@ onload = function () {
 }
 
 function LeftMove() {
-    var arr = document.getElementsByClassName("slide");//获取三个子div
+    var arr = document.getElementsByClassName("slide");//获取子div
     for (var i = 0; i < arr.length; i++) {
         var left = parseFloat(arr[i].style.left);
         left -= 1;     //让图片左移1个px

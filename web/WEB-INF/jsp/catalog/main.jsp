@@ -32,22 +32,22 @@
             <ul>
                 <li>
                     <div id="Welcome">
-                        <div id="WelcomeContent">登录用户的FirstName&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div id="WelcomeContent">FirstName&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     </div>
                 </li>
-                <li><a class="active" href="#">Fishs</a>
+                <li><a class="active" href="categoryForm?categoryId=FISH">Fishs</a>
                     <p>Saltwater, Freshwater</p>
                 </li>
-                <li><a href="#">Dogs</a>
+                <li><a href="categoryForm?categoryId=DOGS">Dogs</a>
                     <p>Various Breeds</p>
                 </li>
-                <li><a href="#">Cats</a>
+                <li><a href="categoryForm?categoryId=CATS">Cats</a>
                     <p>Various Breeds, Exotic Varieties</p>
                 </li>
-                <li><a href="#">Reptiles</a>
+                <li><a href="categoryForm?categoryId=REPTILES">Reptiles</a>
                     <p>Lizards, Turtles, Snakes</p>
                 </li>
-                <li><a href="#">Birds</a>
+                <li><a href="categoryForm?categoryId=BIRDS">Birds</a>
                     <p> Exotic Varieties</p>
                 </li>
 
@@ -58,7 +58,7 @@
     </div>
 
 
-    <div class="rollimages" style="οnmοuseοver=" stop()" οnmοuseοut="start()">
+    <div class="rollimages" style="οnmοuseοver="stop()" οnmοuseοut="start()">
     <div class="slide">
         <img src="images\maltese-1123016_960_720.jpg" s>
     </div>
@@ -105,19 +105,19 @@ usemap="#estoremap" width="350" /></div>
     <ul>
         <p>COME ON AND PICK YOUR LOVELY PETS</p><br>
         <li>
-            <a href="#"><img src="images/bird01.jpg"></a>
+            <a href="categoryForm?categoryId=BIRDS"><img src="images/bird01.jpg"></a>
         </li>
         <li>
-            <a href="#"><img src="images/cat01.jpg"></a>
+            <a href="categoryForm?categoryId=CATS"><img src="images/cat01.jpg"></a>
         </li>
         <li>
-            <a href="#"><img src="images/dog01.jpg"></a>
+            <a href="categoryForm?categoryId=DOGS"><img src="images/dog01.jpg"></a>
         </li>
         <li>
-            <a href="#"><img src="images/lizard01.jpg"></a>
+            <a href="categoryForm?categoryId=REPTILES"><img src="images/lizard01.jpg"></a>
         </li>
         <li>
-            <a href="#"><img src="images/fish01.jpg"></a>
+            <a href="categoryForm?categoryId=FISH"><img src="images/fish01.jpg"></a>
         </li>
     </ul>
 </div>
