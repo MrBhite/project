@@ -27,7 +27,10 @@ public class CategoryFormServlet extends HttpServlet {
         System.out.println(productt.getName());
         String categoryId = req.getParameter("categoryId");
         Category category = catelogService.getCategory(categoryId);
+        /*System.out.println(categoryId);
+        System.out.println(category);*/
         List<Productt> producttList = catelogService.getProductListByCategory(categoryId);
+        System.out.println(producttList);
         HttpSession session = req.getSession();
         session.setAttribute("category",category);
         session.setAttribute("productList", producttList);

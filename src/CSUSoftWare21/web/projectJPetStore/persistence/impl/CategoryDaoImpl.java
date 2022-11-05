@@ -57,7 +57,7 @@ public class CategoryDaoImpl implements CategoryDao {
                 result.setName(resultSet.getString("NAME"));
                 result.setDescription(resultSet.getString("description"));
             }
-            System.out.println(result);
+            /*System.out.println(result);*/
             DBUtil.closeResultSet(resultSet);
             DBUtil.closePreparedStaement(preparedStatement);
             DBUtil.closeConnection(connection);

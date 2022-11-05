@@ -23,9 +23,9 @@
         <c:forEach var="product" items="${sessionScope.productList}">
             <tr>
                 <td>
-                    <a href="#">${productt.productId}</a>
+                    <a href="#">${product.productId}</a>
                 </td>
-                <td>${productt.name}</td>
+                <td>${product.name}</td>
             </tr>
         </c:forEach>
     </table>
