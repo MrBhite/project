@@ -2,19 +2,20 @@
   Created by IntelliJ IDEA.
   User: MrBhite
   Date: 2022/11/4
-  Time: 0:01
+  Time: 18:54
   To change this template use File | Settings | File Templates.
 --%>
 <%@ include file="../common/top.jsp"%>
 
 <div id="Catalog">
-    <form action="editAccount" method="post">
+    <form action="register" method="post">
+
     <h3>User Information</h3>
 
     <table>
         <tr>
             <td>User ID:</td>
-            <td>${sessionScope.account.username}</td>
+            <td><input type="text" name="username"></td>
         </tr>
         <tr>
             <td>New password:</td>
@@ -28,9 +29,14 @@
             <td colspan="2">${requestScope.errorMsg}</td>
         </tr>
     </table>
+
     <%@ include file="accountFields.jsp"%>
-        <input type="submit" value="Save Account Information">
+
+    <stripes:submit name="newAccount" value="Save Account Information" />
+        <input type="submit" value="Register Now">
+
     </form>
-    <a href="listOrders">My Orders</a>
+
+</div>
 
 <%@ include file="../common/bottom.jsp"%>

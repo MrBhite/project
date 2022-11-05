@@ -16,7 +16,7 @@
 <html>
 
 <head>
-    <link rel="StyleSheet" href="css/project.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="css/JPetProject.css" type="text/css" media="screen" />
     <title>JPetStore Demo</title>
 </head>
 
@@ -33,18 +33,21 @@
             <div id="MenuContent">
                 <a href="cart"><img align="middle" name="img_cart" src="images/cart.gif" /></a>
                 <img align="middle" src="images/separator.gif" />
-                <a href="signOnInterface">Sign In</a>
-                <a href="signOnInterface">Sign In</a>
-                <a href="#">Sign Out</a>
-                <img align="middle" src="images/separator.gif" />
-                <a href="#">My Account</a>
+                <c:if test="${sessionScope.account==null}">
+                    <a href="signOnInterface">Sign In</a>
+                </c:if>
+                <c:if test="${sessionScope.account!=null}">
+                    <a href="signOut">Sign Out</a>
+                    <img align="middle" src="images/separator.gif" />
+                    <a href="myAccount">My Account</a>
+                </c:if>
                 <img align="middle" src="images/separator.gif" />
                 <a href="help.html">?</a></div>
         </div>
 
         <div id="Search">
             <div id="SearchContent">
-                <form action="#" method="post">
+                <form action="search" method="post">
                     <input type="text" name="keyword" size="14">
                     <input type="submit" value="Search">
                 </form>

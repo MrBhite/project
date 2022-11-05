@@ -15,7 +15,11 @@
         </div>
 
         <div id="Banner">
-            <%--登录用户偏好的--%>
+            <c:if test="${sessionScope.account!=null}">
+                <c:if test="${sessionScope.account.bannerOption}">
+                    ${sessionScope.account.bannerName}
+                </c:if>
+            </c:if>
         </div>
 
     </div>

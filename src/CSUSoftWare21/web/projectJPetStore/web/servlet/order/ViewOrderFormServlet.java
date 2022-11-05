@@ -1,0 +1,41 @@
+package CSUSoftWare21.web.projectJPetStore.web.servlet.order;
+
+import CSUSoftWare21.web.projectJPetStore.domain.Cartt;
+import CSUSoftWare21.web.projectJPetStore.domain.Order;
+import CSUSoftWare21.web.projectJPetStore.service.OrderService;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+
+public class ViewOrderFormServlet extends HttpServlet {
+    private static final String VIEW_ORDER = "/WEB-INF/jsp/order/viewOrder.jsp";
+
+    private OrderService orderService;
+
+    public ViewOrderFormServlet(){
+        this.orderService = new OrderService();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        Order order;
+
+        String orderId = req.getParameter("orderId");
+        if(orderId==null||orderId.equals("")){//如果是从确认来的，则从session中取出order，入数据库
+            order = (Order) session.getAttribute("order");
+            orderService.insertOrder(order);
+            Cartt cartt = new Cartt();
+            session.setAttribute("cart",cartt);
+            req.getRequestDispatcher(VIEW_ORDER).forward(req,resp);
+        }else {//如果是从Orders来的，则从数据库中取出order，入session
+            order = orderService.getOrder(Integer.parseInt(orderId));
+            session.setAttribute("order",order);
+            req.getRequestDispatcher(VIEW_ORDER).forward(req,resp);
+        }
+    }
+}

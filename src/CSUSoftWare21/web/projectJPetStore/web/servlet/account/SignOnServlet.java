@@ -24,8 +24,11 @@ public class SignOnServlet extends HttpServlet {
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
         Account account = accountService.getAccount(userName,password);
-        if(account == null){
-            req.setAttribute("errorMsg","Invalid username or password.  Signon failed.");
+        if(userName==null||userName.equals("")||password==null||password.equals("")){
+            req.setAttribute("errorMsg","Blank Input Detected");
+            req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
+        }else if(account == null){
+            req.setAttribute("errorMsg","Wrong Username Or Password");
             req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
         }else {
             req.getSession().setAttribute("account",account);

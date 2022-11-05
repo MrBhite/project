@@ -38,7 +38,7 @@
 
                 <c:forEach var="cartItem" items="${sessionScope.cart.cartItems}">
                     <tr>
-                        <td><a href="item?itemId=${cartItem.item.itemId}">${cartItem.item.itemId}</a></td>
+                        <td><a href="item?itemID=${cartItem.item.itemId}">${cartItem.item.itemId}</a></td>
                         <td>${cartItem.item.product.productId}</td>
                         <td>${cartItem.item.attribute1} ${cartItem.item.attribute2}
                                 ${cartItem.item.attribute3} ${cartItem.item.attribute4}
@@ -63,7 +63,7 @@
         </form>
 
         <c:if test="${sessionScope.cart.numberOfItems > 0}">
-            <a href="#" class="Button">Proceed to Checkout</a>
+            <a href="checkOut" class="Button">Proceed to Checkout</a>
         </c:if></div>
 
     <%--

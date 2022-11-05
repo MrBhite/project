@@ -1,0 +1,63 @@
+package CSUSoftWare21.web.projectJPetStore.web.servlet.account;
+
+import CSUSoftWare21.web.projectJPetStore.domain.Account;
+import CSUSoftWare21.web.projectJPetStore.service.AccountService;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class NewAccountServlet extends HttpServlet {
+    private static final String MAIN_FORM = "/WEB-INF/jsp/catalog/main.jsp";
+    private static final String NEW_ACCOUNT_FORM = "/WEB-INF/jsp/account/newAccount.jsp";
+    AccountService accountService;
+
+    public NewAccountServlet(){
+        accountService = new AccountService();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String userName = req.getParameter("username");
+        String password = req.getParameter("password");
+        if(userName==null||userName.equals("")){
+            req.setAttribute("errorMsg","Blank Username Detected");
+            req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
+        }else if(password==null||password.equals("")){
+            req.setAttribute("errorMsg","Blank Password Detected");
+            req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
+        }else {
+            Account account = new Account();
+            account.setUsername(req.getParameter("username"));
+            account.setPassword(req.getParameter("password"));
+            account.setFirstName(req.getParameter("account.firstName"));
+            account.setLastName(req.getParameter("account.lastName"));
+            account.setEmail(req.getParameter("account.email"));
+            account.setPhone(req.getParameter("account.phone"));
+            account.setAddress1(req.getParameter("account.address1"));
+            account.setAddress2(req.getParameter("account.address2"));
+            account.setCity(req.getParameter("account.city"));
+            account.setState(req.getParameter("account.state"));
+            account.setZip(req.getParameter("account.zip"));
+            account.setCountry(req.getParameter("account.country"));
+
+            account.setLanguagePreference(req.getParameter("account.languagePreference"));
+            account.setFavouriteCategoryId(req.getParameter("account.favouriteCategoryId"));
+
+            if(req.getParameter("account.listOption")!=null){
+                account.setListOption(true);
+            }
+            if(req.getParameter("account.bannerOption")!=null){
+                account.setBannerOption(true);
+            }
+
+            accountService.insertAccount(account);
+
+            req.getSession().setAttribute("account",account);
+
+            req.getRequestDispatcher(MAIN_FORM).forward(req,resp);
+        }
+    }
+}

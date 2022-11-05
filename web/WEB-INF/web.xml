@@ -40,6 +40,15 @@
         <url-pattern>/item</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.SearchFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchFormServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>CartFormServlet</servlet-name>
@@ -76,6 +85,15 @@
         <url-pattern>/removeCartItem</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.CheckOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <url-pattern>/checkOut</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>SignOnFormServlet</servlet-name>
@@ -93,5 +111,96 @@
     <servlet-mapping>
         <servlet-name>SignOnServlet</servlet-name>
         <url-pattern>/signOn</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyAccountFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.MyAccountFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyAccountFormServlet</servlet-name>
+        <url-pattern>/myAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.EditAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditAccountServlet</servlet-name>
+        <url-pattern>/editAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewAccountFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.NewAccountFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewAccountFormServlet</servlet-name>
+        <url-pattern>/newAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewAccountServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.NewAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewAccountServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignOutServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.SignOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignOutServlet</servlet-name>
+        <url-pattern>/signOut</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>NewOrderFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.order.NewOrderFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewOrderFormServlet</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewOrderServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.order.NewOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewOrderServlet</servlet-name>
+        <url-pattern>/newOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ConfirmOrderFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.order.ConfirmOrderFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmOrderFormServlet</servlet-name>
+        <url-pattern>/confirm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewOrderFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.order.ViewOrderFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewOrderFormServlet</servlet-name>
+        <url-pattern>/viewOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListOrdersFormServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.order.ListOrdersFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListOrdersFormServlet</servlet-name>
+        <url-pattern>/listOrders</url-pattern>
     </servlet-mapping>
 </web-app>

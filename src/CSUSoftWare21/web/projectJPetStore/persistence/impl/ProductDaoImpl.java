@@ -83,7 +83,7 @@ public class ProductDaoImpl implements ProductDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 Productt productt = new Productt();
-                productt.setCategoryId(resultSet.getString("PRODUCTID"));
+                productt.setProductId(resultSet.getString("PRODUCTID"));
                 productt.setName(resultSet.getString("NAME"));
                 productt.setDescription(resultSet.getString("description"));
                 productt.setCategoryId(resultSet.getString("categoryId"));

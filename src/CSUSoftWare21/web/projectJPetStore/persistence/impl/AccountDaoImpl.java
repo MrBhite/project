@@ -60,8 +60,8 @@ public class AccountDaoImpl implements AccountDao {
                 result.setPhone(resultSet.getString("PHONE"));
                 result.setLanguagePreference(resultSet.getString("languagePreference"));
                 result.setFavouriteCategoryId(resultSet.getString("favouriteCategoryId"));
-                result.setListOption(resultSet.getInt("listOption")==0?true:false);
-                result.setBannerOption(resultSet.getInt("bannerOption")==0?true:false);
+                result.setListOption(resultSet.getInt("listOption")==1?true:false);
+                result.setBannerOption(resultSet.getInt("bannerOption")==1?true:false);
                 result.setBannerName(resultSet.getString("BANNERNAME"));
             }
             DBUtil.closeResultSet(resultSet);
@@ -98,8 +98,8 @@ public class AccountDaoImpl implements AccountDao {
                 result.setPhone(resultSet.getString("PHONE"));
                 result.setLanguagePreference(resultSet.getString("languagePreference"));
                 result.setFavouriteCategoryId(resultSet.getString("favouriteCategoryId"));
-                result.setListOption(resultSet.getInt("listOption")==0?true:false);
-                result.setBannerOption(resultSet.getInt("bannerOption")==0?true:false);
+                result.setListOption(resultSet.getInt("listOption")==1?true:false);
+                result.setBannerOption(resultSet.getInt("bannerOption")==1?true:false);
                 result.setBannerName(resultSet.getString("BANNERNAME"));
             }
             DBUtil.closeResultSet(resultSet);
