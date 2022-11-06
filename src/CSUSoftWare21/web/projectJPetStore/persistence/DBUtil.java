@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DBUtil {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/jpetstoreMybatis";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/jpetstoremybatis";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "ZpC498420459";
+    private static final String PASSWORD = "Dz@102500@.";
 
     public static Connection getConnection(){
         Connection connection = null;
@@ -58,7 +58,9 @@ public class DBUtil {
             }
         }
     }
-
+    public static void closePreparedStatent(PreparedStatement pStatement) throws Exception{
+        pStatement.close();
+    }
     /*
     public static void main(String[] args) {
         System.out.println(getConnection());

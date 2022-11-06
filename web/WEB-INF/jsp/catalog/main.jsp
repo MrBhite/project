@@ -16,6 +16,7 @@
 <div id="Main">
     <div id="Sidebar">
         <div id="SidebarContent">
+            <!--页面相同，请求时带参数categoryId,可以通过getparameter获取到数据，实现点击不同按钮展示不同分类-->
             <a href="category?categoryId=FISH"><img src="images/fish_icon.gif" /></a> <br/>
             Saltwater, Freshwater <br />
             <a href="category?categoryId=DOGS"><img src="images/dogs_icon.gif" /></a> <br/>
@@ -33,6 +34,7 @@
         <div id="MainImageContent">
             <map name="estoremap">
                 <area alt="Birds" coords="72,2,280,250"
+
                       href="category?categoryId=BIRDS" shape="RECT" />
                 <area alt="Fish" coords="2,180,72,250"
                       href="category?categoryId=FISH" shape="RECT" />
