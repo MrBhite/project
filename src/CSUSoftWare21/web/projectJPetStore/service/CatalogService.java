@@ -13,7 +13,7 @@ import CSUSoftWare21.web.projectJPetStore.persistence.impl.ProductDaoImpl;
 import java.util.List;
 
 public class CatalogService {
-
+    /*实现功能*/
     private CategoryDao categoryDao;
     private ItemDao itemDao;
     private ProductDao productDao;
