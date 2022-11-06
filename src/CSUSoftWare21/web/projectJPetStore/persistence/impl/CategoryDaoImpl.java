@@ -30,7 +30,7 @@ public class CategoryDaoImpl implements CategoryDao {
                 Category category = new Category();
                 category.setCategoryId(resultSet.getString("categoryId"));
                 category.setName(resultSet.getString("NAME"));
-                category.setCategoryId(resultSet.getString("description"));
+                category.setDescription(resultSet.getString("description"));
                 result.add(category);
             }
             DBUtil.closeResultSet(resultSet);

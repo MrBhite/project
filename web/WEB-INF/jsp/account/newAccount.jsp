@@ -26,9 +26,19 @@
             <td><input type="text" name="repeatedPassword"></td>
         </tr>
         <tr>
+            <td>CheckCode</td>
+            <td class="inputs">
+                <input name="checkCode" type="text" id="checkCode">
+                <img id="checkCodeImg" src="checkcode">
+                <a href="#" id="changeImg" >Change another</a>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">${requestScope.errorMsg}</td>
         </tr>
+
     </table>
+
 
     <%@ include file="accountFields.jsp"%>
 
@@ -38,5 +48,11 @@
     </form>
 
 </div>
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("checkCodeImg").src = "checkcode?"+new Date().getMilliseconds();
+    }
+
+</script>
 
 <%@ include file="../common/bottom.jsp"%>
