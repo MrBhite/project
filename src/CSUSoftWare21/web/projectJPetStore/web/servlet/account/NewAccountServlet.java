@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class NewAccountServlet extends HttpServlet {
@@ -20,15 +21,19 @@ public class NewAccountServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        String checkCode = (String) session.getAttribute("checkCode");
+        System.out.println(checkCode);
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
+        String checkcode= req.getParameter("checkCode");
         if(userName==null||userName.equals("")){
             req.setAttribute("errorMsg","Blank Username Detected");
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
         }else if(password==null||password.equals("")){
             req.setAttribute("errorMsg","Blank Password Detected");
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
-        }else {
+        }else if(checkcode.equals(checkCode)){
             Account account = new Account();
             account.setUsername(req.getParameter("username"));
             account.setPassword(req.getParameter("password"));
@@ -58,6 +63,10 @@ public class NewAccountServlet extends HttpServlet {
             req.getSession().setAttribute("account",account);
 
             req.getRequestDispatcher(MAIN_FORM).forward(req,resp);
+        }
+        else{
+            req.setAttribute("errorMsg","Wrong CheckCode");
+            req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
         }
     }
 }
