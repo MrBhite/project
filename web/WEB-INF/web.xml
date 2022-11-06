@@ -14,6 +14,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>CheckCode</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.CheckCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckCode</servlet-name>
+        <url-pattern>/checkcode</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>CategoryForm</servlet-name>
         <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.CategoryFormServlet</servlet-class>
     </servlet>

@@ -35,6 +35,7 @@ public class CategoryFormServlet extends HttpServlet {
 
         /*会话跟踪*/
         HttpSession session = req.getSession();
+        /*数据存储*/
         session.setAttribute("category",category);
         session.setAttribute("producttList", producttList);
         req.getRequestDispatcher(CATEGORY_FORM).forward(req,resp);
