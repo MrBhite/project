@@ -24,6 +24,7 @@ public class NewAccountServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String checkCode = (String) session.getAttribute("checkCode");
         System.out.println(checkCode);
+
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
         String checkcode= req.getParameter("checkCode");

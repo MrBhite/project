@@ -17,13 +17,24 @@
     <form action="signOn" method="post">
         <%--用户名输入错误警告--%>
         <p>${requestScope.errorMsg}</p>
-        <p>Please enter your username and password.</p>
+        <p>Please enter your username , password and checkcode.</p>
         <p><input type="text" name="username" value="j2ee" /><br />
-            <input type="password" name="password" value="j2ee" /></p>
+            <input type="password" name="password" value="j2ee" /><br/>
+            <input name="checkCode" type="text" id="checkCode"><br/>
+            <img id="checkCodeImg" src="checkcode">
+            <a href="#" id="changeImg" >Change</a>
+        </p>
         <input type="submit" value="Login">
+
     </form>
     Need a user name and password?
     <a href="newAccount">Register Now!</a>
 </div>
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("checkCodeImg").src = "checkcode?"+new Date().getMilliseconds();
+    }
+
+</script>
 
 <%@ include file="../common/bottom.jsp"%>
