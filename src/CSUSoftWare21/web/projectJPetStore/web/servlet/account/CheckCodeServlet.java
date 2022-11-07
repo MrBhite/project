@@ -14,13 +14,17 @@ public class CheckCodeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 生成验证码
+        //resp.setContentType("image/jpeg");
         ServletOutputStream os = resp.getOutputStream();
         String checkCode = CheckCodeUtil.outputVerifyImage(100, 50, os, 4);
-
-
         // 存入Session
         HttpSession session = req.getSession();
         session.setAttribute("checkCode",checkCode);
+
+
+
+
+
     }
 
     @Override

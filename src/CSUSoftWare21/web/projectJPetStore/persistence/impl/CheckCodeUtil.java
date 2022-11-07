@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class CheckCodeUtil {
 
-    public static final String VERIFY_CODES = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String VERIFY_CODES = "1234567890";
     private static Random random = new Random();
 
     public static String outputVerifyImage(int width, int height, OutputStream os, int verifySize) throws IOException {

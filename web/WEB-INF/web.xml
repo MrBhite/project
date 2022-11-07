@@ -22,6 +22,7 @@
         <url-pattern>/checkcode</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>CategoryForm</servlet-name>
         <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.CategoryFormServlet</servlet-class>

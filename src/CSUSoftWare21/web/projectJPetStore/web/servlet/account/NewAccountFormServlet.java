@@ -9,8 +9,12 @@ import java.io.IOException;
 public class NewAccountFormServlet extends HttpServlet {
     private static final String NEW_ACCOUNT_FORM = "/WEB-INF/jsp/account/newAccount.jsp";
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String num = req.getParameter("num");
         req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
+
+
     }
 }
