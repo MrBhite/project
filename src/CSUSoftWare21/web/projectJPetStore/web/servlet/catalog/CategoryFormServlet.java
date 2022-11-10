@@ -1,8 +1,10 @@
 package CSUSoftWare21.web.projectJPetStore.web.servlet.catalog;
 
+import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.domain.Category;
 import CSUSoftWare21.web.projectJPetStore.domain.Productt;
 import CSUSoftWare21.web.projectJPetStore.service.CatalogService;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +40,17 @@ public class CategoryFormServlet extends HttpServlet {
         /*数据存储*/
         session.setAttribute("category",category);
         session.setAttribute("producttList", producttList);
+        Account account = (Account)session.getAttribute("account");
+
+        if(account != null){
+            HttpServletRequest httpRequest= req;
+            String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+            String logInfo = logService.logInfo(" ") + strBackUrl + " Jump to product categories " + category;
+            logService.insertLogInfo(account.getUsername(), logInfo);
+        }
         req.getRequestDispatcher(CATEGORY_FORM).forward(req,resp);
     }
 }

@@ -1,5 +1,8 @@
 package CSUSoftWare21.web.projectJPetStore.web.servlet.account;
 
+import CSUSoftWare21.web.projectJPetStore.domain.Account;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +14,16 @@ public class MyAccountFormServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Account account = (Account) req.getSession().getAttribute("account");
+        if(account != null){
+            HttpServletRequest httpRequest= req;
+            String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+            String logInfo = logService.logInfo(" ") + strBackUrl + " Jump to the Edit Account Information page";
+            logService.insertLogInfo(account.getUsername(), logInfo);
+        }
         req.getRequestDispatcher(MY_ACCOUNT_FORM).forward(req,resp);
     }
 }
