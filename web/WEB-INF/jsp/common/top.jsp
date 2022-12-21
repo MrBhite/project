@@ -25,21 +25,15 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
 <body>
     <div id="Header">
 
-
-        <div id="Search">
-            <div id="SearchContent">
-                <form action="search" method="post">
-                    <input type="text" name="keyword" size="14">
-                    <input type="submit" value="Search">
-                </form>
-            </div>
-        </div>
         <div id="Logo">
             <div id="LogoContent">
-                <a href="main"><img src="images/jpetstore.png" /></a>
+                <a href="main"><img src="images/jpetstore.png" id="mainPic"/></a>
             </div>
         </div>
+
+
         <div id="Menu">
+
             <div id="MenuContent">
                 <a href="cart"><img align="middle" name="img_cart" src="images/cart.gif" /></a>
                 <img align="middle" src="images/separator.gif" />
@@ -52,7 +46,17 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
                     <a href="myAccount">My Account</a>
                 </c:if>
                 <img align="middle" src="images/separator.gif" />
-                <a href="help.html">?</a></div>
+                <a href="help.html">?</a>
+            </div>
+        </div>
+
+        <div id="Search">
+            <div id="SearchContent">
+                <form action="search" method="post">
+                    <input type="text" name="keyword" size="14">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
         </div>
 
 

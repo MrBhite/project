@@ -1,7 +1,7 @@
 body {
     margin: 0ex 10ex 0ex 10ex;
     padding: 0ex;
-    font-family: Georgia,"Harlow Solid Italic",helvetica, tahoma, arial, verdana, sans-serif;
+    font-family: helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 2ex;
     color: #333;
     background-color: #444;
@@ -64,27 +64,20 @@ table {
     border-width: 0;
     empty-cells: show;
 }
- th {
+
+td, th {
     empty-cells: show;
     padding: .3ex .3ex;
     vertical-align: top;
     text-align: left;
     border-width: 0;
     border-spacing: 0;
-    background-color: #ececec;
+    background-color: #ececec
 }
-td {
-    empty-cells: show;
-    padding: .3ex .3ex;
-    vertical-align: top;
-    text-align: left;
-    border-width: 0;
-    border-spacing: 0;
-    background-color: #d4e3e5;
-}
+
 th {
     font-weight: bold;
-    background-color: #c3dde0;
+    background-color: #e2e2e2;
 }
 
 a, a:visited, a:link {
@@ -121,7 +114,6 @@ a.Button:hover {
     border-style: solid;
     border-color: #ccc;
     float: left;
-
     background-color: #000;
     color: #fff;
     line-height: 9ex;
@@ -130,14 +122,13 @@ a.Button:hover {
     height: 9ex;
 }
 
+#mainPic{
+    height:9ex;
+}
+
 body>#Logo {
     height: 9ex;
 }
-#Logo img{
-    max-width: 100px;
-    padding-left: 170px;
-}
-
 
 #Menu {
     width: 33%;
@@ -198,9 +189,8 @@ body>#Search {
     border-width: .1ex .1ex .1ex .1ex;
     border-style: solid;
     border-color: #aaa;
-    background-color: #ffffff;
-    color: #000;
-    border-radius: 15px;
+    background-color: #666;
+    color: #eaac00;
 }
 
 #QuickLinks {
