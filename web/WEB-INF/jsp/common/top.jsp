@@ -50,9 +50,25 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
         <div id="Search">
             <div id="SearchContent">
                 <form action="search" method="post">
-                    <input type="text" name="keyword" size="14" id="keyword">
-                    <input type="submit" value="Search">
+
+                <input type="text" id="searchText" name="keyword" size="14" value="Manx" style="color: #eaac0085;">
+                <input type="submit" value="Search">
                 </form>
+                <script>
+                    var text=document.querySelector('#searchText');
+                    text.onfocus=function(){
+                        this.style.color='#eaac00';
+                        if(this.value =='Manx'){
+                            this.value ='';
+                        }
+                    }
+                    text.onblur=function(){
+                        if(text.value === ''){
+                            this.value ='Manx';
+                            this.style.color='#eaac0085';
+                        }
+                    }
+                </script>
                 <div id="productAutoComplete">
                     <ul id="productAutoList">
 <%--                        <li class="productAutoItem"></li>--%>
