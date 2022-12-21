@@ -20,6 +20,7 @@ public class EditAccountServlet extends HttpServlet {
     }
 
     @Override
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if(req.getParameter("password")==null||req.getParameter("password").equals("")){

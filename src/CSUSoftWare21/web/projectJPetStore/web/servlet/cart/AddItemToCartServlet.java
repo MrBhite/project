@@ -14,10 +14,17 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class AddItemToCartServlet extends HttpServlet {
-    private static final String CART_FORM = "/WEB-INF/jsp/cart/cart.jsp";
+    private static final String CART_FORM = "cart";
     private CatalogService catalogService;
+
+    public AddItemToCartServlet(){
+        this.catalogService = new CatalogService();
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         String workingItemId = (String) req.getParameter("workingItemId");
         Account account;
         HttpSession session = req.getSession();
@@ -43,7 +50,6 @@ public class AddItemToCartServlet extends HttpServlet {
             // isInStock is a "real-time" property that must be updated
             // every time an item is added to the cart, even if other
             // item details are cached.
-            CatalogService catalogService = new CatalogService();
             boolean isInStock = catalogService.isItemInStock(workingItemId);
             Itemm item = catalogService.getItem(workingItemId);
             cart.addItem(item, isInStock);
@@ -57,10 +63,7 @@ public class AddItemToCartServlet extends HttpServlet {
                 String logInfo = logService.logInfo(" ") + strBackUrl + " Add the product " + item + " to the cart";
                 logService.insertLogInfo(account.getUsername(), logInfo);
             }
-
-        req.getRequestDispatcher(CART_FORM).forward(req,resp);
         }
+        resp.sendRedirect(CART_FORM);
     }
-
-
 }
