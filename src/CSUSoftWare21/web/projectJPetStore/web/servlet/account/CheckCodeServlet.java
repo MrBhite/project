@@ -20,11 +20,6 @@ public class CheckCodeServlet extends HttpServlet {
         // 存入Session
         HttpSession session = req.getSession();
         session.setAttribute("checkCode",checkCode);
-
-
-
-
-
     }
 
     @Override

@@ -21,7 +21,7 @@ public class ListOrdersFormServlet extends HttpServlet {
     public ListOrdersFormServlet(){
         this.orderService = new OrderService();
     }
-
+  private   List<Order> orderList = new ArrayList<>();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();

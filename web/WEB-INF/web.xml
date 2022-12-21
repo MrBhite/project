@@ -51,6 +51,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>ProductAutoCompleteServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.ProductAutoCompleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductAutoCompleteServlet</servlet-name>
+        <url-pattern>/productAuto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>SearchFormServlet</servlet-name>
         <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.catalog.SearchFormServlet</servlet-class>
     </servlet>
@@ -185,6 +194,23 @@
     <servlet-mapping>
         <servlet-name>NewOrderServlet</servlet-name>
         <url-pattern>/newOrder</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UsernameIsExistServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.account.UsernameIsExistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsernameIsExistServlet</servlet-name>
+        <url-pattern>/usernameIsExistServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateCartJSServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.cart.UpdateCartJSServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCartJSServlet</servlet-name>
+        <url-pattern>/updateCartJSServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>

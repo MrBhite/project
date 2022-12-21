@@ -7,17 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%--
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
---%>
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"
+taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
+
 <!DOCTYPE html>
 
-<html>
+<html>--%>
 
 <head>
     <link rel="StyleSheet" href="css/JPetProject.css" type="text/css" media="screen" />
     <title>JPetStore Demo</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -54,6 +56,7 @@
         </div>
 
 
+
         <div id="QuickLinks">
             <a href="category?categoryId=FISH"><img src="images/sm_fish.gif" /></a>
             <img src="images/separator.gif" />
@@ -68,4 +71,4 @@
 
     </div>
 
-<div id="Content"><stripes:messages />
+<div id="Content">

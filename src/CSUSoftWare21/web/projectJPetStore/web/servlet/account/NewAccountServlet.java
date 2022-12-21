@@ -2,6 +2,7 @@ package CSUSoftWare21.web.projectJPetStore.web.servlet.account;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.service.AccountService;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -62,6 +63,15 @@ public class NewAccountServlet extends HttpServlet {
             accountService.insertAccount(account);
 
             req.getSession().setAttribute("account",account);
+            if(account != null){
+                HttpServletRequest httpRequest= req;
+                String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                        + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+                LogService logService = new LogService();
+                String logInfo = logService.logInfo(" ") + strBackUrl + " Register a new account";
+                logService.insertLogInfo(account.getUsername(), logInfo);
+            }
 
             req.getRequestDispatcher(MAIN_FORM).forward(req,resp);
         }

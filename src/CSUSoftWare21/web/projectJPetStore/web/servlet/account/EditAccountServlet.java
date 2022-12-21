@@ -2,6 +2,7 @@ package CSUSoftWare21.web.projectJPetStore.web.servlet.account;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.service.AccountService;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,7 @@ public class EditAccountServlet extends HttpServlet {
     }
 
     @Override
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if(req.getParameter("password")==null||req.getParameter("password").equals("")){
@@ -52,7 +54,15 @@ public class EditAccountServlet extends HttpServlet {
             }
 
             accountService.updateAccount(account);
+            if(account != null){
+                HttpServletRequest httpRequest= req;
+                String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                        + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
 
+                LogService logService = new LogService();
+                String logInfo = logService.logInfo(" ") + strBackUrl + " Jump to the Edit Account Information page";
+                logService.insertLogInfo(account.getUsername(), logInfo);
+            }
             req.getRequestDispatcher(MY_ACCOUNT_FORM).forward(req,resp);
         }
     }

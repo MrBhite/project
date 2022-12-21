@@ -1,7 +1,9 @@
 package CSUSoftWare21.web.projectJPetStore.web.servlet.cart;
 
+import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.domain.CartItem;
 import CSUSoftWare21.web.projectJPetStore.domain.Cartt;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +41,17 @@ public class UpdateCartServlet extends HttpServlet {
                 //ignore parse exceptions on purpose
             }
         }
+        Account account = (Account)session.getAttribute("account");
 
+        if(account != null){
+            HttpServletRequest httpRequest= req;
+            String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+            String logInfo = logService.logInfo(" ") + strBackUrl + " Update the number of items in the cart";
+            logService.insertLogInfo(account.getUsername(), logInfo);
+        }
         req.getRequestDispatcher(CART_FORM).forward(req,resp);
     }
 }

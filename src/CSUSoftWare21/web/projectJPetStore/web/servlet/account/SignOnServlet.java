@@ -2,6 +2,7 @@ package CSUSoftWare21.web.projectJPetStore.web.servlet.account;
 
 import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.service.AccountService;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +29,15 @@ public class SignOnServlet extends HttpServlet {
         String password = req.getParameter("password");
         String checkcode= req.getParameter("checkCode");
         Account account = accountService.getAccount(userName,password);
+        if(account != null){
+            HttpServletRequest httpRequest= req;
+            String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                    + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+            LogService logService = new LogService();
+            String logInfo = logService.logInfo(" ") + strBackUrl + " User login";
+            logService.insertLogInfo(account.getUsername(), logInfo);
+        }
         if(userName==null||userName.equals("")||password==null||password.equals("")){
             req.setAttribute("errorMsg","Blank Input Detected");
             req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);

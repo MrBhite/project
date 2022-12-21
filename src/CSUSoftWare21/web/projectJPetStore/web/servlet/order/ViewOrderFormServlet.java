@@ -1,7 +1,9 @@
 package CSUSoftWare21.web.projectJPetStore.web.servlet.order;
 
+import CSUSoftWare21.web.projectJPetStore.domain.Account;
 import CSUSoftWare21.web.projectJPetStore.domain.Cartt;
 import CSUSoftWare21.web.projectJPetStore.domain.Order;
+import CSUSoftWare21.web.projectJPetStore.service.LogService;
 import CSUSoftWare21.web.projectJPetStore.service.OrderService;
 
 import javax.servlet.ServletException;
@@ -31,10 +33,30 @@ public class ViewOrderFormServlet extends HttpServlet {
             orderService.insertOrder(order);
             Cartt cartt = new Cartt();
             session.setAttribute("cart",cartt);
+            Account account = (Account)session.getAttribute("account");
+            if(account != null){
+                HttpServletRequest httpRequest= req;
+                String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                        + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+                LogService logService = new LogService();
+                String logInfo = logService.logInfo(" ") + strBackUrl + " View the order " + order;
+                logService.insertLogInfo(account.getUsername(), logInfo);
+            }
             req.getRequestDispatcher(VIEW_ORDER).forward(req,resp);
         }else {//如果是从Orders来的，则从数据库中取出order，入session
             order = orderService.getOrder(Integer.parseInt(orderId));
             session.setAttribute("order",order);
+            Account account = (Account)session.getAttribute("account");
+            if(account != null){
+                HttpServletRequest httpRequest= req;
+                String strBackUrl = "http://" + req.getServerName() + ":" + req.getServerPort()
+                        + httpRequest.getContextPath() + httpRequest.getServletPath() + "?" + (httpRequest.getQueryString());
+
+                LogService logService = new LogService();
+                String logInfo = logService.logInfo(" ") + strBackUrl + " View the order " + order;
+                logService.insertLogInfo(account.getUsername(), logInfo);
+            }
             req.getRequestDispatcher(VIEW_ORDER).forward(req,resp);
         }
     }
