@@ -8,16 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
---%>
+taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"
+taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
+
 <!DOCTYPE html>
 
-<html>
+<html>--%>
 
 <head>
     <link rel="StyleSheet" href="css/JPetProject.css" type="text/css" media="screen" />
     <title>JPetStore Demo</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -48,9 +49,18 @@
         <div id="Search">
             <div id="SearchContent">
                 <form action="search" method="post">
-                    <input type="text" name="keyword" size="14">
+                    <input type="text" name="keyword" size="14" id="keyword">
                     <input type="submit" value="Search">
                 </form>
+                <div id="productAutoComplete">
+                    <ul id="productAutoList">
+<%--                        <li class="productAutoItem"></li>--%>
+<%--                        <li class="productAutoItem"></li>--%>
+<%--                        <li class="productAutoItem"></li>--%>
+<%--                        <li class="productAutoItem"></li>--%>
+<%--                        <li class="productAutoItem"></li>--%>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -68,4 +78,4 @@
 
     </div>
 
-<div id="Content"><stripes:messages />
+<div id="Content">
