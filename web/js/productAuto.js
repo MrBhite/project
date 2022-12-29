@@ -5,7 +5,7 @@ $(function (){
         if(keyword!==''&&keyword!==null&&keyword.length!==0){
             $.ajax({
                 type:'GET',
-                url :'/project_war_exploded/productAuto?keyword='+keyword,
+                url :'http://localhost:8088/project/productAuto?keyword='+keyword,
                 success:function (data){
                     console.log(data);
                     var productListHTML='';
@@ -14,7 +14,7 @@ $(function (){
                         productListHTML+=data[i].productId;
                         productListHTML+='">';
 
-                        productListHTML+=data[i].catagoryId;
+                        productListHTML+=data[i].categoryId;
                         productListHTML+=':';
                         productListHTML+=data[i].name;
                         productListHTML+='</li>';
@@ -39,7 +39,7 @@ $(function (){
         var productId=$(this).data('productid');
         $('#productAutoComplete').hide();
         $('#keyword').val('');
-        window.location.href='/project_war_exploded/product?productId='+productId;
+        window.location.href='http://localhost:8088/project/product?productId='+productId;
     });
 //注意区分mouseleave和mouseout的区别
     $('#productAutoComplete').on('mouseleave',function (){

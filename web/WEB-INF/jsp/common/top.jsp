@@ -53,9 +53,13 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"
         <div id="Search">
             <div id="SearchContent">
                 <form action="search" method="post">
-                    <input type="text" name="keyword" size="14">
+                    <input type="text" name="keyword" id="keyword" size="14">
                     <input type="submit" value="Search">
                 </form>
+                <div id="productAutoComplete">
+                    <ul id="productAutoList" class="productAutoComplete">
+                    </ul>
+                </div>
             </div>
         </div>
 

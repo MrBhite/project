@@ -15,15 +15,16 @@
         </div>
 
         <div id="Banner">
-            <c:if test="${sessionScope.account!=null}">
+            <%--<c:if test="${sessionScope.account!=null}">
                 <c:if test="${sessionScope.account.bannerOption}">
                     ${sessionScope.account.bannerName}
                 </c:if>
-            </c:if>
+            </c:if>--%>
         </div>
 
     </div>
 
 <script src="js/productAuto.js"></script>
+<script src="js/productDetail.js"></script>
 </body>
 </html>

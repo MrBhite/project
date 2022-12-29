@@ -32,10 +32,9 @@
 
     <div id="MainImage">
         <div id="MainImageContent">
-            <map name="estoremap">
+            <map name="estoremap" id="mainimages">
                 <area alt="Birds" coords="72,2,280,250"
-
-                      href="category?categoryId=BIRDS" shape="RECT" />
+                      href="category?categoryId=BIRDS" shape="RECT" data-categoryId="BIRDS"/>
                 <area alt="Fish" coords="2,180,72,250"
                       href="category?categoryId=FISH" shape="RECT" />
                 <area alt="Dogs" coords="60,250,130,320"
@@ -50,7 +49,7 @@
             <img height="355" src="images/splash.gif" align="middle"
                  usemap="#estoremap" width="350" /></div>
     </div>
-
+    <div class="inform" id="inform" style="display: none"></div>
     <div id="Separator">&nbsp;</div>
 </div>
 

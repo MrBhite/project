@@ -1,16 +1,17 @@
 body {
-    margin: 0ex 10ex 0ex 10ex;
+    margin: 0ex 5ex 0ex 6ex;
     padding: 0ex;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 2ex;
     color: #333;
-    background-color: #444;
+    background-color: #ffffff;
 }
 
 pre {
     font-family: "Courier New", Courier, mono;
 
     font-style: normal;
+    /*中南蓝#02468e;*/
     background-color: #FFFFFF;
     white-space: pre
 }
@@ -93,8 +94,8 @@ a:hover {
 
 a.Button, a.Button:link, a.Button:visited {
     padding: .3ex;
-    color: #fff;
-    background-color: #005e21;
+    color: #ffffff;
+    background-color: #02468e;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 1.5ex;
@@ -114,7 +115,7 @@ a.Button:hover {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    background-color: #02468e;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -139,8 +140,8 @@ body>#Logo {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
-    color: #eaac00;
+    background-color: #02468e;
+    color: #fdfdfd;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     text-align: center;
@@ -151,7 +152,7 @@ body>#Logo {
 }
 
 #Menu, #Menu a, #Menu a:link, #Menu a:visited, #Menu a:hover {
-    color: #eaac00;
+    color: #ffffff;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
 }
@@ -173,7 +174,7 @@ body>#Menu {
     border-color: #ccc;
     float: left;
     text-align: center;
-    background-color: #000;
+    background-color: #02468e;
     color: #eaac00;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -189,8 +190,8 @@ body>#Search {
     border-width: .1ex .1ex .1ex .1ex;
     border-style: solid;
     border-color: #aaa;
-    background-color: #666;
-    color: #eaac00;
+    background-color: #ffffff;
+    color: #447cff;
 }
 
 #QuickLinks {
@@ -208,12 +209,20 @@ body>#Search {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    background-color: #02468e;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
     voice-family: inherit;
     height: 9ex;
+}
+
+#PoweredBy a{
+    color: #ffffff;
+}
+
+#PoweredBy a:hover{
+    color: #b3deff;
 }
 
 body>#PoweredBy {
@@ -229,7 +238,7 @@ body>#PoweredBy {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #000;
+    background-color: #02468e;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -245,9 +254,12 @@ body>#Banner {
     margin: 0;
     padding: 0ex 0ex 0ex 0ex;
     width: 99%;
+    height:550px;
     color: #333;
     background-color: #FFF;
-    border-width: 0;
+    border-width: 0 2px 0 2px;
+    border-style: none solid none solid;
+    border-color: rgba(70,125,255,0.47);
 }
 
 #Separator {
@@ -303,6 +315,27 @@ body>#Banner {
 #Catalog table{
     margin-left:auto;
     margin-right:auto;
+    border-spacing: 0 5px;
+}
+
+#Catalog .orderTable td{
+}
+
+#Catalog #secondTable  td{
+    display: none;
+}
+#Catalog #thirdTable td{
+    display: none;
+}
+
+#Catalog .second {
+}
+
+#Catalog .press{
+    padding: 2px 0 0 310px;
+}
+
+.open{
 }
 
 #BackLink{
@@ -317,6 +350,8 @@ body>#Banner {
     width: 69.99%;
     float: left;
     background-color:#fff;
+    position: relative;
+    left: 195px;
 }
 
 #MyList{
@@ -324,4 +359,38 @@ body>#Banner {
     float: left;
     background-color:#ccc;
     text-align:left;
+}
+
+#productAutoComplete {
+    background: #ffffff;
+    position: relative;
+    top: -46px;
+    left: 126px;
+    width: 250px;
+    border:solid;
+    border-color: #02468e;
+    border-radius: 5px;
+    color: #447cff;
+    z-index: 999;
+}
+
+#inform hr{
+    border:1px;
+    width: 325px;
+    margin-bottom: 0px;
+}
+
+.productAutoComplete{
+    margin: 0;
+    padding: 10px;
+    font-size: 10px;
+    list-style-type: none;
+    text-align: left;
+
+}
+.productAutoComplete li{
+    line-height: 30px;
+    border-bottom: solid;
+    border-bottom-color: #447cff;
+    border-bottom-width: 1px;
 }

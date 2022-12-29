@@ -11,9 +11,11 @@
 
     <form action="newOrder" method="post">
 
-    <table>
+    <table class="orderTable">
+        <tbody id="firstTable" class="tbody">
         <tr>
-            <th colspan=2>Payment Details</th>
+            <th>Payment Details</th>
+            <th class="press"><button type="button" class="open">+/-</button></th>
         </tr>
         <tr>
             <td>Card Type:</td>
@@ -33,10 +35,17 @@
             <td>Expiry Date (MM/YYYY):</td>
             <td><input type="text" name="order.expiryDate" value="${sessionScope.order.expiryDate}"></td>
         </tr>
-        <tr>
-            <th colspan=2>Billing Address</th>
-        </tr>
+        </tbody>
 
+
+
+
+
+        <tbody id="secondTable" class="tbody">
+        <tr>
+            <th >Billing Address</th>
+            <th class="press"><button type="button" class="open">+/-</button></th>
+        </tr>
         <tr>
             <td>First name:</td>
             <td><input type="text" name="order.billToFirstName" value="${sessionScope.order.billToFirstName}"></td>
@@ -69,10 +78,52 @@
             <td>Country:</td>
             <td><input type="text" name="order.billCountry" value="${sessionScope.order.billCountry}"></td>
         </tr>
+        </tbody>
+
+
+
+
+
+
+        <tbody id="thirdTable" class="tbody">
+        <tr>
+            <th>Shipping Address</th>
+            <th class="press"><button type="button" class="open">+/-</button></th>
+        </tr>
 
         <tr>
-            <td colspan=2><input type="checkbox" value="true" name="Ship">Ship to different address...</td>
+            <td>First name:</td>
+            <td><input type="text" name="shipToFirstName" value="${sessionScope.order.shipToFirstName}"></td>
         </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text" name="shipToLastName" value="${sessionScope.order.shipToLastName}"></td>
+        </tr>
+        <tr>
+            <td>Address 1:</td>
+            <td><input type="text" name="shipAddress1" value="${sessionScope.order.shipAddress1}"></td>
+        </tr>
+        <tr>
+            <td>Address 2:</td>
+            <td><input type="text" name="shipAddress2" value="${sessionScope.order.shipAddress2}"></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><input type="text" name="shipCity" value="${sessionScope.order.shipCity}"></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><input type="text" name="shipState" value="${sessionScope.order.shipState}"></td>
+        </tr>
+        <tr>
+            <td>Zip:</td>
+            <td><input type="text" name="shipZip" value="${sessionScope.order.shipZip}"></td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td><input type="text" name="shipCountry" value="${sessionScope.order.shipCountry}"></td>
+        </tr>
+        </tbody>
 
     </table>
 
@@ -82,4 +133,5 @@
 
 </div>
 
+<script src="js/orderPress.js"></script>
 <%@ include file="../common/bottom.jsp"%>

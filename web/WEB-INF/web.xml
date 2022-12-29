@@ -239,4 +239,13 @@
         <servlet-name>ListOrdersFormServlet</servlet-name>
         <url-pattern>/listOrders</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>categoryShowServlet</servlet-name>
+        <servlet-class>CSUSoftWare21.web.projectJPetStore.web.servlet.categoryShowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>categoryShowServlet</servlet-name>
+        <url-pattern>/categoryShowJs</url-pattern>
+    </servlet-mapping>
 </web-app>
