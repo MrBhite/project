@@ -26,14 +26,22 @@
             </tr>
             <tr>
                 <td>password:</td>
-                <td><input type="password" name="password" value="j2ee" />
+                <td><input id="inputpswd" type="password" name="password" value="j2ee" />
+                    <img id="passwordSeeImg"src="images/close.png" alt="" style="
+                        height: 20px;
+                        width: 24px;
+                        position: relative;
+                        top: 4px;
+                        right: 30px;
+                        ">
+                </td>
             </tr>
             <tr>
                 <td>checkCode:</td>
                 <td><input name="checkCode" type="text" id="checkCode"></td>
             </tr>
             </table>
-            <br />
+
             <br/>
 
             <img id="checkCodeImg" src="checkcode">
@@ -48,6 +56,21 @@
 <script>
     document.getElementById("changeImg").onclick = function () {
         document.getElementById("checkCodeImg").src = "checkcode?"+new Date().getMilliseconds();
+    }
+
+    var img=document.getElementById("passwordSeeImg");
+    var input=document.querySelector("#inputpswd");
+    var flag=0;
+    img.onclick=function(){
+        if(flag){
+            input.type="text";
+            img.src="images/open.png";
+            flag=0;
+        }else{
+            input.type="password";
+            img.src="images/close.png";
+            flag=1;
+        }
     }
 
 </script>
