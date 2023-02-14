@@ -53,4 +53,5 @@
     <div id="Separator">&nbsp;</div>
 </div>
 
+<script src="js/productDetail.js"></script>
 <%@include file="../common/bottom.jsp"%>

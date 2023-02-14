@@ -254,7 +254,7 @@ body>#Banner {
     margin: 0;
     padding: 0ex 0ex 0ex 0ex;
     width: 99%;
-    height:550px;
+    min-height:550px;
     color: #333;
     background-color: #FFF;
     border-width: 0 2px 0 2px;
@@ -300,15 +300,15 @@ body>#Banner {
 #Catalog input[type="submit"]{
     padding: .3ex;
     color: #fff;
-    background-color: #005e21;
+    background-color: #02468e;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
     font-size: 1.5ex;
     border-width:0;
 }
 #Catalog input[type="submit"]:hover {
-    color: #000;
-    background-color: #54c07a;
+    color: #ffffff;
+    background-color: #3189ff;
     cursor:pointer;
 }
 
@@ -372,6 +372,7 @@ body>#Banner {
     border-radius: 5px;
     color: #447cff;
     z-index: 999;
+    display: none;
 }
 
 #inform hr{

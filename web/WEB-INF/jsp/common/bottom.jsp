@@ -25,6 +25,5 @@
     </div>
 
 <script src="js/productAuto.js"></script>
-<script src="js/productDetail.js"></script>
 </body>
 </html>
